@@ -19,7 +19,7 @@
     --text-light: #6b7280;         /* Light gray text */
     --white: #ffffff;
     --border-color: #e5e7eb;
-    
+
     /* FONTS */
     --font-main: Georgia, "Times New Roman", serif;
 }
@@ -29,9 +29,12 @@ html {
 }
 
 body {
-    background: linear-gradient(135deg, #D6EAF5 0%, #7BAFD4 100%);
-    min-height: 100vh;
+    font-family: var(--font-main);
+    color: var(--text-dark);
+    line-height: 1.6;
+    background-color: var(--white);
 }
+
 .about-text p {
     text-align: justify;
     text-align-last: left;
@@ -481,96 +484,96 @@ section {
         gap: 20px;
         font-size: 0.9rem;
     }
-    
+
     .home-content {
         grid-template-columns: 1fr;
         gap: 40px;
     }
-    
+
     .home-title {
         font-size: 2rem;
     }
-    
+
     .home-image img {
         height: 350px;
     }
-    
+
     .home-buttons {
         flex-direction: column;
     }
-    
+
     .about-content {
         grid-template-columns: 1fr;
         gap: 30px;
     }
-    
+
     .about-block.reverse .about-content {
         grid-template-columns: 1fr;
     }
-    
+
     .about-block.reverse .about-image {
         order: 0;
     }
-    
+
     /* Portfolio Category Headers - Mobile */
     .category-header-box {
         flex-direction: column;
         text-align: center;
         padding: 30px 20px;
     }
-    
+
     .category-icon {
         font-size: 3rem;
     }
-    
+
     .category-title-section h3 {
         font-size: 1.8rem;
     }
-    
+
     /* Portfolio Projects - Mobile */
     .portfolio-projects {
         padding: 20px;
     }
-    
+
     .projects-heading {
         font-size: 1.2rem;
     }
-    
+
     .project-card {
         padding: 20px;
     }
-    
+
     .project-item,
     .project-item.reverse {
         grid-template-columns: 1fr;
         gap: 20px;
     }
-    
+
     .project-item.reverse .project-image,
     .project-item.reverse .project-content {
         order: 0;
     }
-    
+
     .project-image img {
         height: 200px;
     }
-    
+
     .project-content h5 {
         font-size: 1.3rem;
     }
-    
+
     .contact-info {
         grid-template-columns: 1fr;
     }
-    
+
     section {
         padding: 60px 20px;
     }
-    
+
     .section-title {
         font-size: 2rem;
     }
-    
+
     .portfolio-category {
         margin-bottom: 80px;
     }
