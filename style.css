@@ -29,10 +29,8 @@ html {
 }
 
 body {
-    font-family: var(--font-main);
-    color: var(--text-dark);
-    line-height: 1.6;
-    background-color: var(--white);
+    background: linear-gradient(135deg, #D6EAF5 0%, #7BAFD4 100%);
+    min-height: 100vh;
 }
 .about-text p {
     text-align: justify;
