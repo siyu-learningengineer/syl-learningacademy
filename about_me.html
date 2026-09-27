@@ -3,17 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- CHANGE: Update with your name -->
     <title>About Me - Siyu Liu</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+      .credentials-section{margin:80px 0 70px;padding:54px 20px 46px;border-radius:28px;background:linear-gradient(180deg,#fff 0%,#eef7fc 100%);overflow:hidden;box-shadow:0 14px 40px rgba(31,41,55,.08)}
+      .credentials-heading{text-align:center;margin-bottom:8px;font-size:2rem;color:#1f2937}
+      .credentials-kicker{text-align:center;color:#4B9CD3;font-weight:700;letter-spacing:.12em;text-transform:uppercase;font-size:.78rem;margin-bottom:6px}
+      .credentials-subtitle{text-align:center;color:#6b7280;margin:0 auto 26px;max-width:680px}
+      .coverflow{position:relative;height:470px;perspective:1500px;perspective-origin:50% 45%;touch-action:pan-y;user-select:none}
+      .coverflow-track{position:absolute;inset:0;transform-style:preserve-3d}
+      .certificate-card{position:absolute;left:50%;top:46%;width:320px;height:390px;margin:-195px 0 0 -160px;border:0;background:transparent;padding:0;cursor:pointer;transform-style:preserve-3d;transition:transform .72s cubic-bezier(.22,.72,.22,1),filter .72s ease,opacity .72s ease;will-change:transform,filter,opacity}
+      .certificate-frame{width:100%;height:100%;padding:12px;border-radius:18px;background:#fff;box-shadow:0 22px 48px rgba(18,52,77,.18);display:flex;align-items:center;justify-content:center;overflow:hidden;border:1px solid rgba(75,156,211,.22)}
+      .certificate-card img{width:100%;height:100%;object-fit:contain;border-radius:10px;background:#fff}
+      .certificate-card.is-active .certificate-frame{box-shadow:0 28px 60px rgba(75,156,211,.32),0 0 0 2px rgba(75,156,211,.28)}
+      .credentials-meta{text-align:center;min-height:86px;margin-top:4px}
+      .credentials-year{display:inline-block;color:#fff;background:#4B9CD3;border-radius:999px;padding:4px 13px;font-size:.8rem;font-weight:700;margin-bottom:7px}
+      .credentials-title{font-size:1.22rem;margin:0 0 3px;color:#1f2937}
+      .credentials-org{margin:0;color:#6b7280;font-size:.96rem}
+      .coverflow-controls{display:flex;align-items:center;justify-content:center;gap:18px;margin-top:14px}
+      .coverflow-btn{width:44px;height:44px;border-radius:50%;border:1px solid rgba(75,156,211,.35);background:#fff;color:#285f84;font-size:1.35rem;cursor:pointer;box-shadow:0 7px 18px rgba(31,41,55,.08);transition:transform .2s ease,background .2s ease}
+      .coverflow-btn:hover{transform:translateY(-2px);background:#eaf5fb}.coverflow-btn:focus-visible,.certificate-card:focus-visible{outline:3px solid #4B9CD3;outline-offset:4px}
+      .coverflow-count{min-width:80px;text-align:center;color:#6b7280;font-variant-numeric:tabular-nums}
+      @media(max-width:768px){.credentials-section{margin:55px -4px 45px;padding:38px 10px 34px;border-radius:20px}.coverflow{height:390px}.certificate-card{width:250px;height:310px;margin:-155px 0 0 -125px}.credentials-heading{font-size:1.65rem}.credentials-subtitle{font-size:.95rem;padding:0 12px}.credentials-title{font-size:1.08rem}}
+      @media(prefers-reduced-motion:reduce){.certificate-card{transition:none!important}.coverflow-btn{transition:none!important}}
+    </style>
 </head>
 <body>
-    <!-- ============================================ -->
-    <!-- NAVIGATION BAR -->
-    <!-- ============================================ -->
     <nav class="navbar">
         <div class="nav-container">
-            <!-- CHANGE: Replace "Your Name" with your actual name -->
             <a href="index.html" class="nav-logo">Siyu Liu</a>
             <ul class="nav-menu">
                 <li><a href="index.html" class="nav-link">Home</a></li>
@@ -23,129 +40,125 @@
             </ul>
         </div>
     </nav>
-
-    <!-- ============================================ -->
-    <!-- ABOUT ME SECTION -->
-    <!-- ============================================ -->
     <section class="about-section">
         <div class="container">
         <h2 class="section-title">About Me</h2>
-            
-            <!-- ============================================ -->
-            <!-- SUBSECTION 1: PROFESSIONAL BACKGROUND -->
-            <!-- ============================================ -->
             <div class="about-block">
                 <div class="about-content">
-                    <!-- Photo on Left -->
-                    <div class="about-image">
-                        <!-- ========================================== -->
-                        <!-- IMAGE REQUIRED -->
-                        <!-- File: images/about_professional.jpg -->
-                        <!-- Size: 1200x800 pixels (landscape) -->
-                        <!-- Type: .jpg or .png -->
-                        <!-- Description: Photo related to your work/career -->
-                        <!-- Ideas: You presenting, at your workspace, -->
-                        <!--        at a conference, or your university -->
-                        <!-- ========================================== -->
-                        <img src="images/images/professional-background-simple-yellow-blue-1200x800.png" alt="Professional background in international education and instructional design">
-                    </div>
-                    
-                    <!-- Text on Right -->
-                    <div class="about-text">
-                        <h3>Professional Background</h3>
-                        <!-- CHANGE: Write about your professional journey -->
-                        <p>
-I have over ten years of experience in international education that includes teaching, academic leadership, curriculum development, and management of educational programs. In my positions as Director of College Counseling, Principal’s Assistant, Director of Studies, and language teacher, I developed learner-focused courses and materials, provided professional development for teachers, assessed their teaching, and managed educational programs. I have also employed such educational technologies as online learning systems, digital media, and interactive exercises to make teaching easier, interesting, and learner-friendly. Currently, by studying at UNC-Chapel Hill and working in an internship with the UNC School of Social Work, I am gaining knowledge and experience in course development on Canvas, digital accessibility, generative AI, and technology-assisted learning.
-                        </p>
-                    </div>
+                    <div class="about-image"><img src="images/images/professional-background-simple-yellow-blue-1200x800.png" alt="Professional background in international education and instructional design"></div>
+                    <div class="about-text"><h3>Professional Background</h3><p>I have over ten years of experience in international education that includes teaching, academic leadership, curriculum development, and management of educational programs. In my positions as Director of College Counseling, Principal’s Assistant, Director of Studies, and language teacher, I developed learner-focused courses and materials, provided professional development for teachers, assessed their teaching, and managed educational programs. I have also employed such educational technologies as online learning systems, digital media, and interactive exercises to make teaching easier, interesting, and learner-friendly. Currently, by studying at UNC-Chapel Hill and working in an internship with the UNC School of Social Work, I am gaining knowledge and experience in course development on Canvas, digital accessibility, generative AI, and technology-assisted learning.</p></div>
                 </div>
             </div>
-
-            <!-- ============================================ -->
-            <!-- SUBSECTION 2: CAREER GOALS -->
-            <!-- ============================================ -->
             <div class="about-block reverse">
                 <div class="about-content">
-                    <!-- Photo on Right -->
-                    <div class="about-image">
-                        <!-- ========================================== -->
-                        <!-- IMAGE REQUIRED -->
-                        <!-- File: images/about_goals.jpg -->
-                        <!-- Size: 1200x800 pixels (landscape) -->
-                        <!-- Type: .jpg or .png -->
-                        <!-- Description: Image representing your aspirations -->
-                        <!-- Ideas: Inspirational workspace, future vision, -->
-                        <!--        goal planning, or aspirational imagery -->
-                        <!-- ========================================== -->
-                        <img src="images/career-aspirations-goals-daily-1200x800.png" alt="Career aspirations and goals">
-                    </div>
-                    
-                    <!-- Text on Left -->
-                    <div class="about-text">
-                        <h3>Career Aspirations & Goals</h3>
-                        <!-- CHANGE: Write about your career goals -->
-                        <p>The objective of my career is to join the profession of being a learning experience designer who brings together education, technology, and learning requirements into practice. My goal is to create accessible, interactive, and learner-focused educational experiences at different institutions, including schools, universities, and various other organizations. In the long run, I wish to lead some learning programs and use AI ethically to make quality education personalized and inclusive.
-                        </p>
-                    </div>
+                    <div class="about-image"><img src="images/career-aspirations-goals-daily-1200x800.png" alt="Career aspirations and goals"></div>
+                    <div class="about-text"><h3>Career Aspirations &amp; Goals</h3><p>The objective of my career is to join the profession of being a learning experience designer who brings together education, technology, and learning requirements into practice. My goal is to create accessible, interactive, and learner-focused educational experiences at different institutions, including schools, universities, and various other organizations. In the long run, I wish to lead some learning programs and use AI ethically to make quality education personalized and inclusive.</p></div>
                 </div>
             </div>
-
-            <!-- ============================================ -->
-            <!-- SUBSECTION 3: PERSONAL INTERESTS -->
-            <!-- ============================================ -->
             <div class="about-block">
                 <div class="about-content">
-                    <!-- Photo on Left -->
-                    <div class="about-image">
-                        <!-- ========================================== -->
-                        <!-- IMAGE REQUIRED -->
-                        <!-- File: images/about_interests.jpg -->
-                        <!-- Size: 1200x800 pixels (landscape) -->
-                        <!-- Type: .jpg or .png -->
-                        <!-- Description: Photo of your hobbies/interests -->
-                        <!-- Ideas: You doing a hobby, travel photos, -->
-                        <!--        family activities, creative projects -->
-                        <!-- ========================================== -->
-                        <img src="images/background.png" alt="AI-supported college readiness self-assessment system">
-                    </div>
-                    
-                    <!-- Text on Right -->
-                    <div class="about-text">
-                        <h3>Personal Interests</h3>
-                        <!-- CHANGE: Write about your hobbies and interests -->
-                        <p>
-                            The exploration of how technology and artificial intelligence could enhance education by making it more reflective and personalized is something that interests me immensely. The emphasis of my work lies in helping students from Grade 9 through 12 develop a greater awareness of their abilities, analyze their preparedness for college, and make future decisions. One of my passions includes investigating novel approaches to learning technology and coming up with creative ways to make sure that the learning process aligns with students' needs and interests. It is a simple concept – technology is not supposed to replace teachers; instead, it should help students become better learners.
-                        </p>
-                    </div>
+                    <div class="about-image"><img src="images/background.png" alt="AI-supported college readiness self-assessment system"></div>
+                    <div class="about-text"><h3>Personal Interests</h3><p>The exploration of how technology and artificial intelligence could enhance education by making it more reflective and personalized is something that interests me immensely. The emphasis of my work lies in helping students from Grade 9 through 12 develop a greater awareness of their abilities, analyze their preparedness for college, and make future decisions. One of my passions includes investigating novel approaches to learning technology and coming up with creative ways to make sure that the learning process aligns with students' needs and interests. It is a simple concept – technology is not supposed to replace teachers; instead, it should help students become better learners.</p></div>
                 </div>
             </div>
-
-            <!-- ============================================ -->
-            <!-- CV/RESUME DOWNLOAD BUTTON -->
-            <!-- ============================================ -->
-            <div class="cv-download">
-                <!-- ========================================== -->
-                <!-- FILE REQUIRED -->
-                <!-- File: files/your_cv.pdf -->
-                <!-- Type: .pdf -->
-                <!-- Description: Your CV/Resume -->
-                <!-- Note: Create a "files" folder and put -->
-                <!--       your CV there as "your_cv.pdf" -->
-                <!-- ========================================== -->
-                <a href="files/siyu-github-cv.pdf" class="btn btn-primary" download>Download My CV</a>
-            </div>
+            <section class="credentials-section" aria-labelledby="credentials-title">
+              <p class="credentials-kicker">Professional Timeline</p>
+              <h3 class="credentials-heading" id="credentials-title">Certificates &amp; Credentials</h3>
+              <p class="credentials-subtitle">A chronological collection of professional development, academic leadership, coaching, and judging experiences from 2020 to 2026.</p>
+              <div class="coverflow" id="certificateCoverflow" role="region" aria-roledescription="carousel" aria-label="Certificates and credentials timeline" tabindex="0">
+                <div class="coverflow-track">
+                  <button class="certificate-card" type="button" data-index="0" aria-label="Show AMC 8 Outstanding Coach, 2020"><span class="certificate-frame"><img src="data:image/webp;base64,UklGRtwDAABXRUJQVlA4INADAAAQHQCdASq0AIAAP0WOvlcwKacjqhXtUgAoiWcA1cCpBbS2nPPl26cJqgUMhXXexz5SlRN8k+guOWVKsZ/vJaiYJKPdq2d8DayXZ1n1vQeZE/RxaE1F28X/nJgZ8jpRLAlk7k1FvHVAqIOnNQ+YOVhmx9mao9YjVDBib11bHhXaRmWbmPM4aCtjTAIRdcChUE9JOAhRpONYCHQq9RWMXc3SoDC2n8zAOvPrMfhqg1gerNvsn8PcWmEh011c0qhVB8MVsCos/h6VlUmwXHFsJ3eKT/wlwXqSQBgVP956phoaZkTzXY4Jd3JB/yYGZVvtqQ2AAP7yxk24d6oyBrSba3zXKsuLtj9MnUoGsFfTJcST07w/UknoTvGgkTDWpwkYh2n1r7/7mObvoXIGXmWj6PdNKK0tRwMiDgo4+WhiMd74it/Di76ipmeL5FBGVsbf7oE/3HqFkGwfXKtPUXtuOvhZABnJ26CK5yX0T4SMKByvS7mgi88YRLxulWD4skg4ZdYlx50CgXjm7ERbWLpvGg0AYVomx+wlaGg7ykCnW/sw1A1jW1yCYAy5ebx25GUEzbM6nD02GcpSm/m22CbRTjx5t0yuPR+hsmuQpWNF67U23bhMNQsO2vSiSig1CchigeB2EQ9lB8LCYq0mc/a1YeA/JpB8apWAudT+ziRCqr5nEVE2D+a75G+MJvZFYls3KFasvhGPKq2qX/LCXSfrzbBS3W0PEs/6nficsVLgeGtr9MV0qn/W5WA4a5ZgCtHdxVE8fCDrBLAIRk+6PcpdRP3bRwtSqba7cleNUB2OmdvW39H0tlGw2bd4/gReNuJ4GC+cmFhCsblgd4rgbZQvU2O9J6fwElAXEAAgKfL6qvPKcIuytByVzfqzzcO4gkp/hWhdjpMsdqTBjVJGgAofGaLrCAMZOtxYI+fxWAxF7uvEs0h3SvFKuvhJaJy7ycMLQ9l32cvV2qXDovjgBBKo2fCSAx3ExLzi2jPeyE7ZqZ8Kg5zOG0dBmQrbQpzgj5ftEaEyq3Z5pCod7mjMUCrVhKvBw56noMPt2/ufpFPQEP+lrVXcdsM6+YPfLO6YJa7ApBYDD9LKIve/H5rCh+SyVSBM9KsLzxNuEcpckSBBoOnATOGNHVcGc2nVyAM4MySsWaroxTeQyd4CIIdaFHM43odfWo3w6cldFovpuuQ5Pmr0qL8iUWM4EoJ5znZlkr2MYWIIV/E7XeKisGek2BgYrDyQGKaMaX+PSJLotNm+f8dZEQo+mDNbxQvmoo7H1KPSQkhnA97MDH7lT2Ur7w5uIAAA" alt="AMC 8 Outstanding Coach, 2020" loading="lazy"></span></button>
+                  <button class="certificate-card" type="button" data-index="1" aria-label="Show SPBCN Outstanding Coach, 2020–2021"><span class="certificate-frame"><img src="data:image/webp;base64,UklGRigHAABXRUJQVlA4IBwHAACQKACdASp/ALQAP0WWv1uwKiYkJxVbogAoiWU/gKRTwx9XWGuZ8u/wD/OZGgQ7/Nb6GP/dvntlmDMJdPH+4bNxq9GNmjfTvxIyBS1uAUFZi2OB8/QYXLaB8N/5znYQozhne6bCX+y0idsPm5DWuzTirIoYPIxWyrQ5fuJ2UelhWUGTbYuL7Ior5FhFCAn3247Fny6F3ynSUY0ktgmitS1XrXsLd3txXMW94ELrz1a8Uo7swxX2IOJ6spSnd0sbcoul+bOS7zfda7+hw6fVEkNEqdVjPMQQOSV5I/9lerHAipoFSK1gqqy8HasaYZvlo0RqB17V57elQNel4ErRwLqgoOKaNULVzBYjZFkL4P/UVlN5URr6UlLRJbwvZbytfQQljTzgzFGslM/WvEuUYLkHvtTFz9fQln8/ht5dmJXMKKGvzIEvFQvimlM8oCAA/tlwOE2yjdQrHzX4lpc6/98RWxEyKa0RnQuJhMkP+hYdGZ6t2CAPAhDkcNADpQWhVbg5n0KgejtGnOtMcfv2eS8baEyiwsMB+W5JaYEVQoiTC9I9KcEFHW2FPZU30HOngm1rzHCRe9TuZS3UXxcFePiDJqdN1Vv2Q3S6Sqeky7/WY5sWO4A84ysQuV8mhdcr4dIG38Rc4GzRXIdk7kBBBIwi2dVlNHBbBAaIH7JRyif599Otp5WzuP/ok2GC4IUGvFeDnLNBzI138BIBcgpmL67cXIr/Jx+CstETzggGlqYE1YafbmjMYMfc+5724wSULNrHJYCN4c1i41Vj7gudHNWOyqmOLr9qWMoLAyF730zBTbk28GF3mWb5yIvdz5exUOaP93fkJO7FQblvntd4Gne13V3zsqAXgUZ7ZH1CTSeBvzslY5EmJRMYZDH2/XSpjmCF8eYTCFkBCh4kdWUFMkJCmkDStL/q3xPEljOCEecSGBdH8HCBo5dA0IVsmoZi4cNVN8jJKA0UA6HkrST8zBdYQJkztGvigAzYWSYGSujqJlAyLNIF6pT114pi3in+mwrSv5es6YACvDsM8immsEvZmuXBru2pCmT+tQllYdiATKxhDvUsCi8CUqhcEcmIw2CYR/tOtUb196JvRxZ0u4oVjtif2R7Kk0zNqnSuGnbFPhr5HJAKkx6I/1q/vDOXNbGdiU8sgR+1l4L/mUxQYk/r8pr9hqY6azaSII5lEM1L2AGtl/KiCQ7Xfdl2fI2n+PmcdPy1x19Ub6K0mWsZzgdxn7pgITfCHB8PTIXIYaF/0Ouqi+FWAPaCsHbVnJRUXKkC/ieRpB19liQwzytCnyoyEDeTQCyqGvrnXeH7g6xbb14rPzivMNhe/fHrPE5wdGLkWoeTnJTYJM5y9o5QBYnG1DYzs8uXv6iELEEe1p7MrByiZIrccl2ZPH2p5CeTaK3RVVOdQhwCwrz3rh4qZXI3P06UyplHb/AhmF9hdhes2Irdm32nXcCW6S1cspfz4k4oPx1rByj12S2xRMgWAa/MHrcNnf9YtGOawAoynKJVSigMI69mg1sz2eZ5amCum76YigWyppyBGozFbobXLGFu4MqXxEgTX826wuZ/COtNxdxMcj+dvMHYICSPhHi4KJmIhLYcz9ZIYiOXW/1ISwXbvEogJW651u27asGnST8RJd/qnxkG3ltwBiOefsuBovDrywtwSfbqhhWEdH+OcIqWjLY6ur/aOojdKLtKVBS/Gu6iBwdp+6aT4zJ5a5qVAKSWE221MdnzQbrK1fVk9aB924PNo0zAwP/zByyVNhxlqxwquN8R3q/Bv4l5GfAuHt5W49M09a1MYJQFyShSiH0DW/LBJdaQ3zBk6HUjaCciDlldjGe8ayVhNgBWyfcLLNnXlrnYRr8n/6WADM3FHqfpZdcfKPw/a5Tc/a4+vnZvCJpjMf4+j9nJDTcHqHdJKafK1krEpk39WzqXN8OCc9AY2jr6TSaZfdHTVQWInqI3Ke1FwQbgF9kbOsy+mbrn34jN4IEdN+pagt0TvbNY3xJTpCrF98AyxyYKClO2iuqOHuNJjC0h/UPQZZYQxs4tvA42d34kQ4L4qcKMwL71ojNflPhA65NpiNOzSbjYq19sMt0R7s3H5pBfN3I64wfNqdPBXSyaA8PQZ1fPGnB923bfgPK0ownEdD3Bbttt7zaFSUWz27jXky2bqwYL5W2ByDZD5otsfBYby1NntaBW2N8mQWl/7pR955usdcN3yRNs6+dZn+uyqpUBFHXRNnPA1KPUXOlJcQvd2twTT1lh7yndQqOZ/9M5r0QyPO6i/dIbL9a2eEABqM8MiJGLbv6u2Tp6ZErq4rQ2SpD8kWv+hbNqm92vwO9bl3m4TZaASJ/QqkZRbH4MPjs3vJuJiFTVnX0Onb7wJ14TrYdLk0sihhl7HkRpL4QD4XkKkoQplbjq+uJGdVKq+hHI1FMAAA==" alt="SPBCN Outstanding Coach, 2020–2021" loading="lazy"></span></button>
+                  <button class="certificate-card" type="button" data-index="2" aria-label="Show TCFL Certificate, 2021"><span class="certificate-frame"><img src="data:image/webp;base64,UklGRrgEAABXRUJQVlA4IKwEAABwIwCdASp/ALQAP0WQwVqwKKakKhEb4gAoiWcngmbzI6dt8zkyTzvxJPtMrEo167LmkvZVDOMs+HpUT/TQ9TU5YDv+FnHOrooxINxqvMzTibURmjVXGX/QeRByr8j3eZLSX5zFAoR9Ryt6MJErFiFw0sayJIGiuy5jdLc96gAwW04yNoDRDMlqaU0Ywq6wMoBMIRYh7hlB+KSSmp5Ys4sZ5r/enmOQJpaWTVl/Nnvj7m0uXVGvwc1Z81yQylU7zG5OuTQmrZ4HnEQ37rXhxbIzGseTU4g/d3DSSPMYA/8xmQaPQkxjuluPzPOYXQBDa0Ekmcyosge9XTtsGoixRFVybiV77vylAM9U/7u26n6+A59RkDLt+e/9qycENaZVe970Nn0AAP7tN2veCB8lHIyaU4HkxNx6TefUPYGQeNxSZfo79tmSjxfxnArKF/dE07rkqLabuFduw1hlD1dkl3O8cj+otoi3v4XEsqGQkhr3HhGTsTrq14dPB57osZ+Dbtp0EWuYfTxZJcv0NUIxOilEoZ+lUZ2plATK/k3KtY37c+x6FHZUw+wq6h0wH+lyxlnrH6wNPaDIfKkKtQJrc6wFteeYBp94OgGNtviy7O4ANTE+0KPESfJ2RAxFeaLbLrSUNAizEtv3J0vYUoP9nW3fYC4Lrx6SirB5X6AGtOfwXhbhQ4yqCIvj7KFmGGKIMsRBxrs+Q1cl2yzwIHqiEglXfLw+PmWX3QgEIILBhI3Dy0nvF3ZRm5gXJxu35NqE96zWonv5jGDItAMtdCuAuQ5qNtawGy/NlMpk97jhV1gUj46+bgP3jUtfXCtlDqJZfc+vYDGtfxhRYRFwsdgHPIhcoWzcw35nvGv7IGLeUnGTLtNtDdoi4QBa0zmrt6Rr1yStKHe/wCW85SF9A6Az9DjaldISZoq21kAW8RBpZLoXmp+HUMD69wsxs+P2bv1qfvfkloBu/wAQILn/ui2XynpboxkG/NWzkC9tCYoOySrok7OAWAQompFGcKtokowFCvyoF7lRcQxy2toh7qeT1HDVy7sDGldrNRmbDxQta4+09ljx466wYgBg1pyk5NK3PCwBI8EUI55hoJsLDkSY0NaNrqjI2SerfMLqc0oW/5eQamdbgU+bLbTshktkVGge/L09ZwxIWF4UXLi4ug8+DqGYQiy6U88SZKoQjltBIEyV0zam5RiLU2mulR2wdRdzZ4xasIZ++EBUoz81gpy1WQWlTNim5t1TnNbMOgmYlsqindzKtdSpU14IryTilTyVzTgERgvN36BjNCjOrTeKNDG/jJzDZddW9mMkjtZnVdbgTL9TqvMvOLJ+B3MHIcV+VC1tazGYCllsg4jhntdkNm491ru9ZxYoREOJ9RdsnLwYOsXrXl3VZhR36eWVcT6c/2mBhp/9BSmXwQ4FU0N3tIC2EddYmBI/sO+kywZ+U1ubtbqjsS5QewAGHb+3WlZ5FKtUgvT370WB8R0yESzFepMHOvzmLxQZXtIw8hnRXzg9sANYXPe3Rkv2KqsQ9ct5NCsvQLCXlarVhY+lqv5feE8o2InNrZ3s48ZAk68UhYcZNE/dRdZJbtFIAAAAAA==" alt="TCFL Certificate, 2021" loading="lazy"></span></button>
+                  <button class="certificate-card" type="button" data-index="3" aria-label="Show ICEF China Trained Agent Counsellor, Mar 2021"><span class="certificate-frame"><img src="data:image/webp;base64,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" alt="ICEF China Trained Agent Counsellor, Mar 2021" loading="lazy"></span></button>
+                  <button class="certificate-card" type="button" data-index="4" aria-label="Show LIBF Outstanding Coach, Apr 2021"><span class="certificate-frame"><img src="data:image/webp;base64,UklGRggFAABXRUJQVlA4IPwEAADwIgCdASq0AH8AP0WWvlowKiYlJLkuIgAoiWkA1nSr1c+1IvPl9cdXgLYzMiiBMSWNMREWc+THNBLflOeBz+Nm49JqLDuvhYZENkHKS+gvgBkqGWBABKGIioSH78qM119vwGjBw3xBClDZL/aPLuzoz3/M5cIvMO9uxsQWEDZiUplXmMpbGMOvozMcZ6cH4RNzCxMLzB0l6ONNW++0/RK4ld4mN/DcVBl3o7ZivYTmsNHVAbQWKTpHXeu0wDieOFVywn/7N4NO7soee6eUjeOtv8Mw+Q0yV81mC+n9WO1FNFXbTySOclYw6ScWqOTZvNVIsX1rHZWJ1BazXpk+bTT5Fjgjbt3SdOIg5fkziUk+syOGieQc7X3PJNtUBb9W3AAA/vM0mfA7iSbF2P6W3q8sZD8bcjKAlG0RAqQ+i6CyH74hkaj8mej2Qula5Tgnvp0K405JzTj40FSP5Cn/n2ldui2t/BjSkPrQL+OkZPuuuAPTEXSrLDV4fE+PtwxNkNNBpPa7zRLUzAbPqCd20Ybl+oZJd+uUw3/2Dvonv1E7l86mE3rcbKJBJTnwHVIYw0fXhmylw9T4wZ+jzUmgl98af5hXF6qqqNEX82sm+Q7DV6rnMN1uw1QTfvJ3KAqrzy4N5moLzY7WRFSN1VDffo1L5SIL57b6CIe/WbMu/StQYf+krj+82S7OTT6dnwjvH2/5SloIEzgFhKJ612/3i5jUQy+PhRUj6aUAvjMhR4qB6fiAucHE4rXRJL7MjY2w9c4JgZmJmpxr5KIMc10vbSNStZcTxGxQNzOURTto+GOIzIifZCXPwZxJYSiIg6wi5FHlAaTi5IeORssRkRnOOAQd8ZfblDdrvhDIhKI+Gkpl9ZxMDil9/1poEKp0sqBTUXIDN+uxGBZTK/L62e2sF6npjG96exU1WAD6EAAuetbIRzoSG4mYr7QyS/DlWBikVoy6LhqNAWZFlmkJesI6lvWqqEAufMxnMrmfHxsllkn0qqa3kVFmCXYixUc3iHjA9O5VeML9d3fPkIGWocByIuAuC5cBRGAjrjFn/thFpPKr8QQO49AKmDhNdyq6ExAlhBD3pB0639AbuzfChblqZu+jKoy3X5dcxGcisyQJfh3syVRgJUcN5M4YfFUTgO595URkcbgq05cb20Fd53wq028dy2cn+pCMyD0h7iGNvb0ZzquroG61N+apnQz8pN5h4kZXxkwFy8shJG3Gdqw0Kl/GmmTP2r9ZJo02AP/Sgq4sSDiHBwdyrj1CVyywyLRUpkU4FcfmzBzaEFDK08USeVxPR2zzCe7UJyR1zdxy3/3aRbhPJUBHjAwYwgM/3oHk+eboHmjcwejPzxSGDBORdCLVm1m7n7uVc/lDi1DHbCHIY4EATYJY94Eaz0kvPdVHfSTpRgG71qrGIXdoXQGoAuBPiElvJNjMuUD+X2FZY5k6RiIQ8WFoxEuRTL/PfcHQ0NLLCB7stCGQ/IFE8bd7QjzxX/oooQ5p6PNVVt7IFKCGAdgP9Jq4yxLNue7mVICODABs1EY1F7Fp2fWMz3MtQPhcAyMvYyZzHfQi8TMGuv6UX6PQQlwa7CmE/T/XgUYcO8bvRLusZOC/QVfcR3AK/VHk1ufCKIA/DRASjuOkjsny446pV0S26pbFQAWjnPw3UWdCLk+ajJiZm4tzrYLUsg9kTCyQWtnydKtBKAAA" alt="LIBF Outstanding Coach, Apr 2021" loading="lazy"></span></button>
+                  <button class="certificate-card" type="button" data-index="5" aria-label="Show USAD Coaching Excellence Award, 2021"><span class="certificate-frame"><img src="data:image/webp;base64,UklGRoIEAABXRUJQVlA4IHYEAABwHQCdASp/ALQAP0WYwFuwKiekI7F+YgAoiWduSTU6AJyWVDXwVTT0DX7rJKz/me0dc6dIQvVoZxEojjV63j/DvlFViGu2ymqED/pzxC+MelkZzkHnortpYFdluLdMFC7azVo5taIGbOfGbNufA1s1/g1VXcVnFsOMkdzsIjUrEZnAR/5lSq5iGwOJrwaqwlHy1+AURFxdJOr/O0EPGILHepbVXrT4sEx70DyOVvZtjFSvTaNLG5ipix8UIdSxsT9TYHLqyPf3HkpxF13UZv5NyWXErx4GDRdYn72k5S37x7oiYETPrcwcMVm834ogD50S/KngAP76gdqZ/BQI63g8MZQgWFgrujRC33VR7ubL96EpQYLfuLWr+6a/LfhmTxgWWKyaZsOx29+M0mFJCBx+hFMuv7kiNS4t4w8PSf6ZBv/T+m3QnCetpuWMYHvXfWA7L80xoqbj0qiX3OD/nhCvfW6nfieqkEE/dfFvo7eGBqkB78AUbqUJ5WWbsIDa6doIh+e4iRzHH5hVXp+jJv/tc3TWe3Gvq2xPepWGEwTns7/smbGy9UISubUm7xnLOAdD3SFik4Xs57xqW/Wuis53REIP0tByuPikXev6+ygmMbMfheJVNt289+TqRivukGynzbk2uPM0L+FPNouyZIl18glyMEltPtIASPMtEOV9L8j8kVqlQwwLFDXLdRkCqIr+qSw2BV7NsFUTVDX2tz67gxkUMhtJbsQixORxA3BNxV1asm1iOAR2N13/uhNk1EomxwYmVs0qUQNCKaOmsCYDBfi1r+3ALAmbtMPQNrP7OUP65iPDR4iUOh5ylcKkXBjNjGJssGBCLvzzbk782dvD+dJRfK1gXyNrH7MnmhYCOfGxULpspbtBLfgDpA7HNVJ4tIToJvWbpNr1K+AkN4WbIksi8MoUNxJgIEqxMhLmMzl7zUYGRn9vtgFmJfi3io/FtZWAYwnoKDP550fatKcSiezgNIUTde4QUNTugoD51FpHmWRqatxxr2EAPkhwHubLo+o3VTfUAa+eo5Tp5ffrTSy7bOc/+CwrwjPBVUj/R7qnPMdIjC5g7ipwaRWhcK1yLLU8lstXGYAM+ys8WZbWQdtRo4MFVdI6EcFFottaNdB32Dsyrw+vbwFxnf40NNXIDBtkhZ7TOxygaFTodHLLQpB7P1SEMJUVVr6vopyuZz1FybkmmV+EfXcaEcWeoUMtDdWPNmkJmcrfrK8XYWLo8U2fK5zUuAEvRoVpQaOCXaCxPZsclWrlUSA/2wLLHfyocN5dUYBqBidEKlRRHp/+u4viU6d9J6cwQect0F7tPrK48QZ0EmbCqKtCGKIwgtLl/b+x2cESZWVk0PA8O2x1gFYCI5fYmhZjEJffdAgLyjX7qz4K95MTFK23p0zJAvKVsAaT1xTU79TGPP7eJukO0TOXQyTP99mMDx+cOSoTVWs7xLYXlklDMu23is3R30JnqRGZz7ZDDNnuMOZIhbYCdVjArRauGpnEsNqien/SMxr1AAAAAA==" alt="USAD Coaching Excellence Award, 2021" loading="lazy"></span></button>
+                  <button class="certificate-card" type="button" data-index="6" aria-label="Show Math Kangaroo Outstanding Coach, 2021"><span class="certificate-frame"><img src="data:image/webp;base64,UklGRioGAABXRUJQVlA4IB4GAAAwKACdASp/ALQAP0WWwFmwKqejpHO+QgAoiWccAA79nYZZ412ObmBaYNp0uF2CeVUo/0+01eBAro00D/8+54yKfLU0U5wbkMGOrQEb3iP2hv3ACJlwaw15e5KSEVOshUnulMu0cuhJ5V41hskTrl5v15+pJ/mlL9VbjnsNQWlzbh27L9sx3uWSrOwVf/gjpWjU+RExaSwDKw6vkjwA2DtQPfOf9LhSdenGdEu7ulrcohHwuUgHcIIl+iiMVETLlJ2w3JxC+bXTvfG1Zsu1U2VL9HHxipUdhGIlyYpxhlCgrmBZ4pzyIWqphtOqlOkGZVsH3eB/hiNgHfTBS0JTU4q4TQkIvVpudFBZyr2vYTC7WEKZEUGlMvV7QtkPa98A70tlyCwJU8heBUttLW/GS+07aYPojH+PP+QKa9mCXwjjmmMNYyf61qy6HiAA/m7zXL0hOZEaCflWxy0O05rd3zpbv8IZiLrxXz+9nNWKAdbpqG6MCR4DG8ByGbHopVpmYvZtwYZfMDMVtlv1ooN7qCPe9FvinYJuk3F1IdWToPbbBywqS8+ubTDMqUfA03ssd97WNOtPf3afXTyRSgvL437eSpmoKX7C7WBTIGuBGzaDEpyiSbGvGnn5LbaKHL6LsnHNkYFw6a1GpjNbJrazwx7wpDV+TRN13sXixXO7W2texF1pUmny1W5cy28kw8LrN/+WAnwgEy9NrQW0Fl3SRW1rEfSr/PR8J3ZkWB86/jG1YMIvIVTAje38e+M2Qmt9TBgHmGMwFZFjXaf3kaOH8gTMxUtfFphTSdOs+m5T0Y1Tv4BpJf5lqTPeTLZOe7jP7i6xi7srqeIW35k6Lv0tdCubCwp30aLcusgL3SuPJEwdzw+f7q0CNty/Zys/z0PQeB/QmMfsx9OtiN2NcE4KfaTyD3a5T87KAAV1CGC/vIXcFqE++UHKr4sVCSUXl5FcLG8UkiRA22EKYSn/twKr6j+aMREtkBAaUD8kR4TaQSyff8x2dtq1vvttW36nkBAOgPUbYAlA8J6sBF/TiBeojjenhdXGdoctuJ8lvt1OQ1fm7bs9kfo1B/PtzYany9tKq/Z/H+lp6thR1YSBwIDaXQ9FjQDRcKdLFjXRee1ASxe+fknZLhc+8/QChI8T1sqX6U8XT9Sn67PAgm7ciA3FjDwG1KQutT2wOe00xS11i5y0McgHIhwUKcTRP3rmdt5rs2cgETAk4lNqQ55Hkz3Sp3Egi4N3VHJoW+zViiBimbqC9/vxJlRKswYQLaOoJNVhY7GmNKhQyyclDJQRR7ukfQFtWiU2hemZ+gVtF8isMCj2UCgHuzfBu2c+AiN0wYJbtJZGAGE8PFtxVlwib+82BvA68YKX4REY2tFJ+ddpBgkZQHUCfTiXglemnErUzTiCSPbKNbtQrao/jD026qrVb/Bz+ufStB6GguBQ5Q6s9GDIGGNH3QoW/9ybDCPiBRIGS/NExMMD2HjSJVzvyI9kdWcC1BFkkHD0W9A8IHH+gWxJF+gh6r4BWDlQlArxi0fmiqJG4+/fjwnttP7Lh+trnMayVT0mAOmbIH0MHbM48nyYwfu4rUlvnK9gi4ZqKOEpyNaBfEg/au0vriSKQR8+Oq+l7qZV1nWInNZlFOq+1L+CR2GPmWLVAxjCiKObgMiY/6i2lxAkSDSNGzSGN1oWwHfJZ3/ggF/7d1K0SglA5t9epJkyproRQUFrMaucIzai2adxUwV3tBaY/MgzBoCVYRGhmJa0T/2tz1EDSVAgFPp4p4O1yWRoNy8tLDICw3FpXkHq1inW+wHRyjoApiCTGU/7AEHnQrb4JlML8P3Lei616ZTQjFKEdMfPVdMI6lsp7NEvZLHwOXe84E0ZRRSAuYiJvcADqrqCfwrknh6yX8TqF6R5O/MBhfABNO0WCCmJ6yuXh/IH/x//RnI+v5uPryDcSy9SioFaj2hWHrbpNtLHVtNaEvSxTUfY4Hq21RaIGOI7Yu/0HAtheQ0pXbWhw1LVXdfZJoOWZtITt0pV3PB8Q4arzqUi7O1rEFpnPdbn9QEK6id+VD01dkE8E+juQh3w49z+bD5VzGX1VNf8AAA=" alt="Math Kangaroo Outstanding Coach, 2021" loading="lazy"></span></button>
+                  <button class="certificate-card" type="button" data-index="7" aria-label="Show Australian AMC Outstanding Coach, 2021"><span class="certificate-frame"><img src="data:image/webp;base64,UklGRqIDAABXRUJQVlA4IJYDAACwHACdASp/ALQAP0WYw1swKickJXULggAoiWUA1o2giRbdm7Fqel8vvwtb7IZ8RLFl+KIrzKbKyYje3sfi6BX8TiAhXusp07zrzb1dS5M4kg3W1exaxO/fwV5jNyNLMHbTJDn2FhoznYaimrXnh3+4yRWHVozFzkUS5jVP8HuxczfMdoheDmNPvT2N0b4QEhHKtlvO6kR+M1TG0cKchlC/1LDDIH3AejmH40l2+LwZkZNSjgHBXmCd4RMWhZjDRDJ4O6jm3/40ihbtumQG1Hri/cX5mCZKlJqKvV+pMMXMWp1G67KufGr4lFcdkKQgAP7uZIRR9F+mGHH9N/yzFqEYvUDIww7f/yFNfzMvqEMdxakKKl2G/MejV5bdPdD36HD0REL5bD1udh4IzsJ5Nuq5kybjzzEZv9Now1BbXhfQ2JEjCRbfl/v92CdR+xYDld0ttVeN2MxKeUVTXvTJeyALEVSzJxjwGfMFKRpQM+dBob5A0GgHlmctVDhl4ti7zx8Bu9mHSyHZgN9hjaQACvbuSR9HOTnfM5B2r821XFItCFLK9Q9TRR2JXYcTOifMqjC2vTIwPHLsWRFv6VjbqcP/AbKvuwoQCA5t04zUym/QoGUoeDfI7O5RgyppHVtSIlgAveefwmWTEuCAoVRdt2ZAUD1hyTHtH0ZFLggmJjqmk7AlF+MPPSMoZyVIKEUjT3YryLjviTpj6IeRaL3MCWRvEuPvgZCvTkcNl3j4dz9ed+stH8ElF2RoCvzmklEbsUsJUPVINaQdZYA/jnwSoWXNUWJY6Gyxt18tFWbDnBiTGNH8gtzlwX1bkiIcsl6PfqembUwek3liofQppcsGeD67Dkcew5wgs1fWRIbia+pOrgUfqmWxOr7T66LZLs9hTHXVrEiFPyklDoXG06Su4lEiLSfygTalVWVppR2oARw+oZGUFvTuTK7UvX1Hs/uc5nzOQ2PByc8a1zY+gOreVcfQ+2MrIw1DYAhtgZ/AfT3y+C9op2RhP4ajEdmYdSpZuhx0S8L+ug4V/WJTW2dkMwnYRrnMSkPsCfUdcs9QTsftSirocM9SSqMbcE7ZlwRCihpaqVVzB0dtFiv2uZ4FkjD9PZVgLyG01eEU1hzGRb8iNR3zXoJake+Zj55DxcVuGNAoP3pim7OU81WIzit+L3Z+kn7cTizg26NFoMETK6fQnV2QP/8XSQuS5/YOZ2k2bhRkYlEoAAA=" alt="Australian AMC Outstanding Coach, 2021" loading="lazy"></span></button>
+                  <button class="certificate-card" type="button" data-index="8" aria-label="Show ASDAN Math Teacher Forum, Dec 2021"><span class="certificate-frame"><img src="data:image/webp;base64,UklGRpQCAABXRUJQVlA4IIgCAADwFACdASp/ALQAP0WaxVewLCipqhXqagAoiWknZGjQQAEVPOrz2Il5FKL0sgCdbYYPhr+I037FzghzvkmODX7zJQUm0I/S4EUEWvaEP8xLktIMttIFPhNnlZ7vOAR+YaMRsI7kxVc9YO12Mzc5kdbkfQlKTimkE9j8gQi3ZlZx7ldC6HVkRyVoIfbAgRaGvNALqcxUDRId1a9tehnlaIp5MGMujuCLKj2JYFxmILc04AD+79Vh8/iXMPCP+XLc8BzDQTxTNIvxGWD/LCK6a7PqNJudxTUY3MWrokQtyHJRnz00ew6ScBuI4BLl4cs6PGvzBE14uWMmnBO7xL0UQ0Qr74fpN8KwZ1gcOHCe8xAwgjfl528BVYEuOrvN3K5KC1uKii9vjiQOBJC789KQoj6cNX9AjCZdS1mDDSffYiOI9lNdC4mwgI2ovCtp5xD1ciLzx/qEJxOHuTiEAklxgPbEOv0dqWY5iYxjRVjFrkYAEQYr0EWLtLs8qOZ5wPUg80wShZO48kss6Eyx4KbOw/fHHElu8BACV3On9z+iTFQ5A5oekhj70EsgMpubK+jmlXmLhGFyCDha6deIEhduAjEHSpF0alVZZlrMMO3PCi7UVTgGVAiwKD2b8jTkyX+aFTx0EH7LfFcTK/YDZmALsVg0VBl1DnxWN8CvqodzsNCY/fHm3Wfj5F3OE7NmU4Q/ZMKGgoeQLmfQPjF68TG4H7FFuqAMGP+V4YZck01EgNbBtKInzqucmPfsKDZ9G+0E9Y7upTAdXChoS3pAeZ8CszSEYjk0OaT0ZmLgxWE5d8/EoWKJoiFrpw6Wn4dXaVq89azSjHEcNnEkgQnCCOsX60XPaQrXgAAAAAA=" alt="ASDAN Math Teacher Forum, Dec 2021" loading="lazy"></span></button>
+                  <button class="certificate-card" type="button" data-index="9" aria-label="Show SPBCN National Finals Judge, 2021–2022"><span class="certificate-frame"><img src="data:image/webp;base64,UklGRoYEAABXRUJQVlA4IHoEAAAwHQCdASqFALQAP0Wgw1wwK6csJRS6YgAoiWc7AQAyOduoJZ3MVYTab9psb/WbnWSucO9wafh8QmmsN8xxOcZhGj/M01Mk6Kab3MLjDiBjCVdRuYEVueeL8B7Xphx2tZclHyXipr40OtDZiK+0BC1gCTLf0/V4wTRLehx6KOkJ+r0r1eUAclQPM25UASc1vWH4kf3Vpo4Mj+bP0FlVrwgbD6IbSZCAgu1hic7hK9TDHMyHFB3pELkoRBs7YxcHTfIbE9HjRHyg0NImUZnYmlPZChLxhZpM8eIe5U5KHjjeSdBZcKDBNt8qOK0NCC6rAmViwAD+wu/pdD3iQZ96Uormp6H0ZDWlUAA2AIVfkQe+EmKEiOqQm0kAVa43jfHJYZD8rAy2ACEIip8i/tWZERUMBu1iWKenzyzeEXE9lhzYVdMdcQDhrwpqeLeOONzcvYhU6c7Ay70W3ekpRAPhRrZw8JCwavs+UiHKEgCerEYJIU1fswWrrYvbv+iGZ3DKuVwMVB6AAoLebPxaTraU52xkPIaG5hpDLoVEKMVqvcJGR6Y37ocnuYqYIWjkbUFyT/e8cyoGHAX539LFf42ULDtVfNcIIMBZbIxm/wa5hTIL70BlgkBP73FSYey1nH2pJg/Lh6iT5bkNUEvr5MFAeoT1ERDRTmKXwNAKIMfqkbM70xV9PXjoA9yeOALSXugcmDOfyaAQdWHLf16/J7aQAu2t0DB3MbJLH751c2H1cAI1uEo2j9qp5Eyzn/u83xD9/2d0BwteAPck3hYaU1oieziY3XraYze7MVZMhI7UMgwbzMhccg7E/DEkVwUp8JF369P0AROCvPFRWga7Q0ng8BE5HgWHU3t1j6fOb+zeMX6mHrdd+lVoMiqVqrdHAwMRRY5qACG/cqiDiTQ7R3atk6ftLAd5VRejcjTqD6be5CoW8vX/awX5H3VY9vYylg+vH3NwScEZEKP9ItYKtbtlrsj3isCnAoNlTkTKE7tO3NSJGYRJ8yPqMqoGHN8ahedZBUXRqOOrI7fe0JxcpNzOhuGuHFybIR8z9MU4Z4A7ebivHwgoEr+W+H5OADOqxuHamJFduT2ZkSwBTKAdAJKgZ8Ihdy9ZI1xSnEPzYVwKu99AgHYJmCCJgUoHe3Ap4AMhY/jooRMkEvpc1Vc34gFSP5Rjpd655vQuJE+MNvStoJHI0uF9IPqn84/JZuSOUfcudPjO1dJAvrLtz9lS06CesnXyfhrWZkyCVy//m58rMRe880BVKeDn1df1UZ/9ljYCUYvDD+l8eK6Nfw8UohhW3AXqSIuQJHXt2WYtITgC1d8f5YcO1JRRrH8BFiHyKGUxSODkb4IjYCJBVbWRCn0A4hzUHU5oWx3+sIN0s1b9VhC24swkYTVQtKEjKOPYSzgmQ5MO3qOITGrSztOJiVX4Q7KcEJfs10zbSV2ehRlIj7hIxQGBiXEVmYGpDtgPqdRslr0PAiUc58G3EXCk6HXfy9mCZCwuKDU3H9xhc7wKZbe4vcglMUSUAAAAAAA=" alt="SPBCN National Finals Judge, 2021–2022" loading="lazy"></span></button>
+                  <button class="certificate-card" type="button" data-index="10" aria-label="Show Advanced TEFL/TESOL Certificate, Aug 2022"><span class="certificate-frame"><img src="data:image/webp;base64,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" alt="Advanced TEFL/TESOL Certificate, Aug 2022" loading="lazy"></span></button>
+                  <button class="certificate-card" type="button" data-index="11" aria-label="Show UKMT Outstanding Coach, 2023"><span class="certificate-frame"><img src="data:image/webp;base64,UklGRjgEAABXRUJQVlA4ICwEAADQGwCdASp/ALQAP0WYwVkwKyejo3Td2gAoiWMvNmiX8mQ57OL5x/Pd8MsVg9pWfnez/EwtSR1fFPFdb6w0GicWYP9Xx7RPyQsWuO3MOv1IzIbQXP39L/zY3wJKe9yYFJXdki5RqZzbUMBfceXxx4RkwrkQalgTt+YJ0Izs7vXVC+hNRKaFlej6/Kz8PhtRxS11pEiOcIfbfiKOpTjX3SGghHDDpLxmhonkzrHu/T00oNfvsgeMKGXHxppUUn6Yr6S+1sUEP9KBvtAJCESqnVFcqI1zvySfzr9w854C3PIIv5/qsEGsGUAA/a8xLJIxAOgPcYK0RI2Gb7EJbPs1yh1grWf9kc0fTvilxZaWRizHoi3mlZtP6yZj7DAIxt1p0WVK8wPAGYBKt9fF2Zz4PTEelqDQ1V6s2sJFNa2zrkV+KjY1RXzF19Tz9A783nqP0zKWhGID/3/NCvhlyTL+pI7GFFE5oPiJAPtXZ3/U1JhFWRrBbKF9cbKfR4U8TC+e0HTlFyjXnn75y//45BGLSEdvWbT7qWcXhR7tY0/Lgmjhq31pcpr/HgklyAx93y1LneB6BTDbwCnqAiC6+of/pYDQxmisjF6pYaEdtwCEnqs0yZ7TtRiQoe0atrETh13RKAOKwppT3a5vUdo95ZS0bXjZ9dW0YWlBobSUvilXs+f9NFWmsOACRkCBd9zDSEaF0225x41EMrFH2g2szR8WKnhLwSs3gI4x0vHnOq3HyZSw8MaNiWwzPKIR7toOITu3Vnxfia1V5ghQ5lKYCcOWkBHABKOPbU7w4FXQPCtAuhGAb49mS6AepimipzRAKU0/dy8D3Wgqu79lCDzVH5xXCFe3QMitYF0npobx1ftZXah+3VLbj4qifADw6mFugY9sFXg85edvWHNyVs7K4O+ihXG/yAem0URLlbkIH/kZZR76pZjvxNw6rundvws5bksJY5/NBqA4YMCF6syVNQw4dFeRfytloVZeakE2MDWUtg0er2ot1eIbg9L6Q+Kl9+uO+x1H7uSv87ECEUdJJV6fLOwnhp7c6SUDPJKB5dSlZXRCgwUcWIUwjo6JxBVTlZralgOkK6H875Wtm9DYNgIoONNIXqn7XHc2hHNxZ3pNTMVxF+QR/H5dIAMlYorAwnKkqz3B/zK1fWde38QFyyqcF1JdoRLKrge8lXql4haPzotfmrjgj4vObd1xsevsBgOGFo9i2rP8TnEc9hMg1UAAvqKNhsgAYfRMza7IhuXuQ736vlQRqqxYrFzINABX+MBEEY9b334X1HHfGzwWUaoVe0Snz3y+B1aBHCSnmrnhYUEzKHKlpR5NRy+PM9IQ8o9gUE9R2zb9x/2R9u1MbUEGVDhPgsEGYfHJyIsr6NXrDdlCMbibyxinoa30VGHhm/UkHvdxbhVR2kLCCfQgAAA=" alt="UKMT Outstanding Coach, 2023" loading="lazy"></span></button>
+                  <button class="certificate-card" type="button" data-index="12" aria-label="Show HOSA China Judge, Apr 2023"><span class="certificate-frame"><img src="data:image/webp;base64,UklGRgQFAABXRUJQVlA4IPgEAADwIQCdASplALQAP0WQwFqwKLalpjEN4tAoiWUYlKe6KBzd037mEmn/fVb3FdKV3VoDIEXXn1TUmPh4jxNAj2o+jLxSRgC8JzsAhLsOhzVP+lqLC6L3zh6TIxFoJWQlAuXyKGvWObxfStL7EDJYznqbJdyqLIKHXcGbaObMzNlBH4qu3FOwhD/8U/jW2ak7Dst2tDonOIqiiqHy+GAq5DCzuWuvmMLmRQzt9zlbo9o+0zpKwy4ju5dNb3MEatAURnli/mSOpufg5rxLCnL3x7+snoRyOWzEWzGiL9lyAiv0UtoTRyw9NI9JTTduSfPYa4bMba6u+YFP/s6oMi+23tJNpbK/YLEgx8ILJ03j/fb3XaaGSYhPgMdIAP7tFLHs0jkyrHX1ZaiGAQxKRhgO56hpMzL1lBhH75iiaESp8VorwHBUSVlPbXy/dpHFWaT84mdJh0sk1bfXtbBiCMuR8ClCehuklJfBnhg4yVipYcJlElqxVilBJS5sC+f2PLtNaYN5s6qiaZ6+Nw8wkdqcEJYWoIp21GEsjDObBH2WxZ8DEQmnNjCxZDWeQzPOnjqX6Ub+Kr51iNY12Et/5PFv2vGwvuPbtiJmnNTu+qkJOJ19teDTVRiSNexOQIPkujf1SQ3avnzoAY2/MIKlUX+dv8I20rGmVOQCdKOQ1eNw2Q0C1u+HCdlofIkFQdkJmHd0a8ZTbd6k164LDQV3sSGN7clG8kykBnprWSlI8q+7E1TyDGnwPgszzUAAzbzea2TKfppdrzsfYrLT4MOj0lA/FH1QFQZYAVBY5rHA4e5yw+QerejUKuLjLA7ppkbRka3iQpm6HMSkkjal+gTYWdqtLQEiUrI5ulvu9GzmN/v9JepdGfMGcqpaadRwBpdPc3nwGfRtS6lLfhs2sR/ANLCEkY0szkN7JAxsmoGTDDKI9XHMMJ549KWyP1MCy09owk8Vx3R2loGthqC0JD7ULmhOaEEFjtaP8TTP3sIT2b6yWrmzDAurQEqNnXumSyGY9j4xDCBFjT5kqEHxHTLfA1CML/usVFDEafhbB+sPtOB7m8nSzSnYwVFBp91Bp7/FSV2V80RpFT3l17ZoHsw2+dgI1101yaU6FoiC0PzEKAD0r32pfr4VVTtlR+jN3KqxOeFLEXj+VlbhDZ6FONm1sucThk2JPkl61sh0CIimWfHaQusIBZbOxnGz3jYMmnGwoR6lHDr310Yv2PZf6AbPyLhWuJnoWkYtBC7Y+MJtSYF+DwjLICMa3kqbDgdDlKwgjcLvefLmPGHgibMqICZtubWvHy4Mc3VMnVVl7CLqg6UMW63R/MtFMLYtIpRcu73uRNyU/NuwzqspMLjPCGZMDhyZvmMFRgtwJeTA7p1Rya8MOjANptZpJk3fzjqJ2IPhRfqdl22vd/VUQCjsYcXJbpobMRPGIQDhPOYhotmnFEv0R5VTtt6kctmiwiYehVTVA9Og1UeDb8CESBoDyosD3NXskW4ZnCCoD8c5YOs5N2HvLSWy06Lda7HoULvsIsltdrqY8fnRKlecaAxiifXOoyRlOpFpKK19ohl7oXAAr7vKJQMF/nMTRSTT5JH7awRyaJFUwypTGWBw0LUa1GTd2RRZZ3oywCXjLJUoMuDr1srfkYZVVI1crEVI0R8PITEIt98jJAyWZFUbFcB9iB7bkr0x3kDRsCv5CEcwAAA=" alt="HOSA China Judge, Apr 2023" loading="lazy"></span></button>
+                  <button class="certificate-card" type="button" data-index="13" aria-label="Show Math Kangaroo Academic Board Member, Mar 2026"><span class="certificate-frame"><img src="data:image/webp;base64,UklGRsoFAABXRUJQVlA4IL4FAADQIgCdASp/ALQAP0WQvlowKKckJxJOYgAoiWMcUA7DpSr6V+utpDHR3ZoU3hSPWB9oOvU/N/+vs7ITiOXs5RVui2ncMyf4GvqNu18blWQznhsUhW7nfcemnBZd/sXjGs/x03Cx0zcSaLURkSOaRvc1bUSx/zmBnxfANs0dXx/r71GE/glWWuAY+zkCq3OUOmE1OQWU/HP8QzQeeI8wuwnjHtGZ9LzXDHwVgJab2lCYVMpgNK8bBuS0YKXDRb+53yzPeLg0isZlbKZssv+W4Kddqd5j30mmVYVg9aGo/fN+v2aqj/qAofwjEDFBLLAp8gGXFUBHbjk1qEHECu1KUE3MhqoJ5ZEq0a3CwI+3lkjN0IVmNOK23cuu63lmlWEOIAD+O0SALi889lc8gp/rLGNO9r8hknikcOSPDulxLKlBnmO1Vp6XzPNeSqu4UG5Nquzxb13EDX2S4zRRr8Z6Jb7cUwLjgNgqE9nUWZ0HlSSS+5asQlzlV9jnX/yRncUntwXov52HFJhK0ELDg6kkB+PKe/F3PvgNCRxMb8C2frY7LLqcaLxTgmdXQktZC8OZy0WfTEOUX79m+P4nd+V8zgpzgEQA1/Jw2x9FF2QAVFmsde7DqhZmXRr9/SmJnE8QtWM/ESSFTsOcYqEbL65Y8ILgu2nzV3LLEBKekZPAsjseu+TAESoMXP0F56wP7XRWOSWFWNTPsZ9Rybr2HmQChO/XRSJV55Of86MVEXjDR5lNHIp2lvNdp+dPfujLW+nPPVWPTtzrj2zxHpwlT/i4PnnnOvfx4vWugH9m2hUfYoNxRTMti5dWtTXD1L2rnCX6Wmdxcx68c4Qse1k1N16TgVID16fwbGryWw7nI3+zYd7Gf3fJf4xQAINXk+cf2YsVJMVfNxj5u0zUTNEQdSUc2wywVHkLpzYIohkCgofH6C7oOdBdEMpGIF7v+7rl6d2iBJFHtjDM0tnrAPzol2MRo/WkfSrul1ygDNyBdsT3gfyMk1bPAsY+X7MmY5jPNkKKBGqmmM2VP8TLGr+ZyRMw0Qu7rOfHmqVUjVtmoAhvgDupl7z5neIfOCOPISVmSTALoY+P0ipKaZGofpTns4h+U3YSwRaKid33HJOGjIRiQ+IAFd6jOJIaJtR3DQtVADCg0di8xTo5QqIL2BBUNy7+A0Bir56PS5N+3abMDE28blTesA+5WbMlOH1tVx2dADzZqsgv95MpjHDnnfOhW9uX+pQHuzSoinIi+NpxtMouGgMabkrnZql8srryy484D9j/qz5Z4QOh44LpEtiWmYIDJOahSVev2EKrtG05HUAl2P3CdcuVoRZPQ4fsYh4+G/pSPVqB8lFlSg4EZO/ps2rEvtq6UFAq2139qhvUsdgY/+CmM27SQbUceVnNgGn8U6Blphh9EQWV+s4GfMF8e1LYXpKlOp3slM9qEJOwXIdaZGAQAqzSZjtgjb5Z2pOMJn8NzPds4RYncYNqJPhAkSGqvwH+lKFNdiaVEiZqnh4FvZjhAL09SIghLxmLUHfZxf3DGXJ8N61AfxsHVttv0SyiWR1gDPqrFGGnfCvcPGA/3c0tXfWoRKJPnoGixXEJrMQGicmq8RUCz6yYuLDd8cosEwCUH1rExjHHrkClmqs58kwSGvmYqnQv9BdVgEVUoBl8Dz6PmVOvZnlK6b4MQzVJVCfTmwkodV3RrNON4pWvjhtpyL8lqkKdLuuj5atIhrlEizFfs6wOgDsaGBctjxTpe8EXwkJIINuTp6yU/9Uq9zRsfyyBgHObhkhq3TvOINaAVEw9zFTzlPOdCiYS/WP8UhlbwKz0bH3r366O1SitwQ48lPiLnUYkQxBkjeXXVfZ1H4Zn0U4SdEUX69sW7geJet+dR2XpXpzJGlvqgpQhqEj/UU52QfrfZ0SYSQ3o3QbJrKOOCzoPx8AZtvZvlK0UHeemDwr04eKGbHx8mvoAgAA=" alt="Math Kangaroo Academic Board Member, Mar 2026" loading="lazy"></span></button>
+                  <button class="certificate-card" type="button" data-index="14" aria-label="Show ASEEDER Teacher Forum 2026, Apr 2026"><span class="certificate-frame"><img src="data:image/webp;base64,UklGRqYEAABXRUJQVlA4IJoEAABwIACdASq0AH8AP0WWwFewKyejphR+OgAoiWMnABWK6Bbq41T6b+u1nXH03fy7tPY06F7q7g/aZOMNsfzRVyFvIH5QQDhh14hn6qkZ3MPpavaLvinCefPCzKyQBhbeKVjX8TVzPySSk/Kl4aaoktSEyHJpWA6mOQHe70Ck02+uaMbpAqpq+PM9hw8isNx3230VSm26xQGCm0K4iedtMk+THH3RaB6K8mNaBp5i721ASdemAY6JglGJgXiL8YtD/waD4QAQ+UM9yvX6q6c0U9gwJTyV3ICyDdLXeUniRo39FMTPmCFCfArjPOaXGHIyxcCUK1849D3HAVDVK3uHDfJQUpq0i97l/lM2Nv8AAP7mJhb468o8bmh+ZT4qdJWXWgGulbzihaSAQY/2oV2bcBFySsHaW9Mm2oocx9uYPUuN8iQLwvRmRK23w+tCjhjEfmyR3zH9uriiQAUlAsljMBaXzFALafND1p7yt1SRGdJY88rOFZq9eC4FHR3/ilVTmv6mvFZCx59kaUNNpkRtoQ9Any9iFLcjPM/Is/YlELjePZRcxscUsECi/Pcw/0I9X1zly/ZKA79cYjbDCPukL189Nvd7yAyA6tj3oXHaCuXVgDd1UWCzhQhOlmIsbwIEhUSIcYAzjwItSKJSJ1VtabICuqIsR6DBcue5ruLOEM33QfegVNCfPn49ouoV2IadTNTbp9p+kh+xRWJ7l/rBuT1VF6nb2msKRQDDDS2P4qdD5H0ApQl7x99NV16z1JMaCSyNwFKViFXY6LE+aOwS05xLu1BGjmcWDlCL7AA8Ti1uTgzKSjAJB1h3yCXxaN0r3IZBiraczMOUSK5dMVmUBZ4XMu1clI1NkogqEhLyi1Sjy3eBbQeG7jyzjJuAOQTWfaQZu/TD9S/904v64ueEb01vmI6WS0oIWgPlLIJtiZgLEf6Q+VbD3PhR3fQoE0fdD3m5PuDP7JIIHEvuwAwUza3Q/rLX1SoQZrS0WR9tMy2EdOwThR9klLRqb60IvNaY2FUqkzcwvb61BYcLgUTrzlmoxenbM4RtZ45iAIT8/8WQER8VtClmA2flIZ4dOj4Ke4isBi4qYIt0U7C9cNcoLcT1qiQuYPf4qMrbdtft7p2lMEsddHsevSOIf4aPETB/Oj4BocR/cL/WLS0fLESiOmJ9dW/9w3n8HeZvEX7LGSMHOxwmXXjwdOygDvh7YIQ/D/fwD7zlmkNINOnQFpNn0yLAOAm/qdPw3Ct84O6yFUyJ78eShcqyAuzQL6pe3BYSmGWgekhiQrcMzcVH/M3nGTRAxTZvFl6O43svZl6E+iXsspWF/3uc1IgbLvzBiWZzBDVUh+czroohTXoiwqys0Aj7f0zj7E+QSCNiEyarSExKFrrkuXsM2TKpAI3da8meR0TAC67z3HxV2hzCn3zCE8xCfN+SQyHJ7IeJdStq0m0GDqIP2X6So1DhIMHO7Q1aWHdRqTV5YAMf2rsA0G/oE6xnaCZRDvERAhnfv1W9cM3Xxzfr0fO1FYU7NlIAKflKRWlbzspGYm0A85fz2LxgNTGNHCy36W36FAAAAA==" alt="ASEEDER Teacher Forum 2026, Apr 2026" loading="lazy"></span></button>
+                </div>
+              </div>
+              <div class="credentials-meta" aria-live="polite">
+                <span class="credentials-year" id="credentialYear"></span>
+                <h4 class="credentials-title" id="credentialTitle"></h4>
+                <p class="credentials-org" id="credentialOrg"></p>
+              </div>
+              <div class="coverflow-controls">
+                <button class="coverflow-btn" id="credentialPrev" type="button" aria-label="Previous certificate">&#8249;</button>
+                <span class="coverflow-count" id="credentialCount"></span>
+                <button class="coverflow-btn" id="credentialNext" type="button" aria-label="Next certificate">&#8250;</button>
+              </div>
+            </section>
+            <div class="cv-download"><a href="files/siyu-github-cv.pdf" class="btn btn-primary" download>Download My CV</a></div>
         </div>
     </section>
-
-    <!-- ============================================ -->
-    <!-- FOOTER -->
-    <!-- ============================================ -->
-    <footer class="footer">
-        <div class="container">
-            <!-- CHANGE: Replace "Your Name" and year -->
-            <p>&copy; 2026 Siyu Liu. All rights reserved.</p>
-        </div>
-    </footer>
-
+    <footer class="footer"><div class="container"><p>&copy; 2026 Siyu Liu. All rights reserved.</p></div></footer>
+    <script>
+      (() => {
+        const data = [
+          {"year": "2020", "title": "AMC 8 Outstanding Coach", "org": "MAA American Mathematics Competitions"},
+          {"year": "2020–2021", "title": "SPBCN Outstanding Coach", "org": "Spelling Bee of China"},
+          {"year": "2021", "title": "TCFL Certificate", "org": "Teaching Chinese as a Foreign Language"},
+          {"year": "Mar 2021", "title": "ICEF China Trained Agent Counsellor", "org": "Chinese Education Agent Course"},
+          {"year": "Apr 2021", "title": "LIBF Outstanding Coach", "org": "Student Investor Challenge"},
+          {"year": "2021", "title": "USAD Coaching Excellence Award", "org": "United States Academic Decathlon China"},
+          {"year": "2021", "title": "Math Kangaroo Outstanding Coach", "org": "Math Kangaroo China"},
+          {"year": "2021", "title": "Australian AMC Outstanding Coach", "org": "Australian Mathematics Competition"},
+          {"year": "Dec 2021", "title": "ASDAN Math Teacher Forum", "org": "Math Kangaroo China Academic Committee Meeting"},
+          {"year": "2021–2022", "title": "SPBCN National Finals Judge", "org": "Spelling Bee of China"},
+          {"year": "Aug 2022", "title": "Advanced TEFL/TESOL Certificate", "org": "120-Hour Advanced Course"},
+          {"year": "2023", "title": "UKMT Outstanding Coach", "org": "Intermediate Mathematical Challenge"},
+          {"year": "Apr 2023", "title": "HOSA China Judge", "org": "National Leadership Conference"},
+          {"year": "Mar 2026", "title": "Math Kangaroo Academic Board Member", "org": "Math Kangaroo China"},
+          {"year": "Apr 2026", "title": "ASEEDER Teacher Forum 2026", "org": "Mathematics & Computational Thinking"},
+        ];
+        const root=document.getElementById('certificateCoverflow');
+        const cards=[...root.querySelectorAll('.certificate-card')];
+        const prev=document.getElementById('credentialPrev');
+        const next=document.getElementById('credentialNext');
+        const yearEl=document.getElementById('credentialYear');
+        const titleEl=document.getElementById('credentialTitle');
+        const orgEl=document.getElementById('credentialOrg');
+        const countEl=document.getElementById('credentialCount');
+        let active=data.length-1;
+        let startX=null;
+        function render(){
+          const mobile=window.matchMedia('(max-width:768px)').matches;
+          cards.forEach((card,i)=>{
+            const d=i-active;
+            const abs=Math.abs(d);
+            const xStep=mobile?82:128;
+            const x=d*xStep;
+            const rot=d===0?0:(d<0?1:-1)*Math.min(62,36+abs*7);
+            const scale=d===0?1:Math.max(.56,.86-abs*.09);
+            const z=d===0?120:-abs*95;
+            const y=Math.min(abs*9,30);
+            card.style.transform=`translate3d(${x}px,${y}px,${z}px) rotateY(${rot}deg) scale(${scale})`;
+            card.style.filter=`brightness(${d===0?1:Math.max(.46,.84-abs*.12)}) saturate(${d===0?1:.82})`;
+            card.style.opacity=abs>4?'0':String(Math.max(.22,1-abs*.17));
+            card.style.zIndex=String(100-abs);
+            card.style.pointerEvents=abs>4?'none':'auto';
+            card.classList.toggle('is-active',d===0);
+            card.setAttribute('aria-current',d===0?'true':'false');
+          });
+          const item=data[active]; yearEl.textContent=item.year; titleEl.textContent=item.title; orgEl.textContent=item.org; countEl.textContent=`${active+1} / ${data.length}`;
+          prev.disabled=active===0; next.disabled=active===data.length-1;
+          prev.style.opacity=prev.disabled?'.35':'1'; next.style.opacity=next.disabled?'.35':'1';
+        }
+        function go(index){active=Math.max(0,Math.min(data.length-1,index));render();}
+        cards.forEach((card,i)=>card.addEventListener('click',()=>go(i)));
+        prev.addEventListener('click',()=>go(active-1)); next.addEventListener('click',()=>go(active+1));
+        root.addEventListener('keydown',e=>{if(e.key==='ArrowLeft'){e.preventDefault();go(active-1)}if(e.key==='ArrowRight'){e.preventDefault();go(active+1)}if(e.key==='Home'){e.preventDefault();go(0)}if(e.key==='End'){e.preventDefault();go(data.length-1)}});
+        root.addEventListener('pointerdown',e=>{startX=e.clientX});
+        root.addEventListener('pointerup',e=>{if(startX===null)return;const dx=e.clientX-startX;if(Math.abs(dx)>45)go(active+(dx<0?1:-1));startX=null});
+        window.addEventListener('resize',render); render();
+      })();
+    </script>
 </body>
 </html>
