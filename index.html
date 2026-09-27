@@ -3,17 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- CHANGE: Update with your name -->
     <title>Siyu Liu</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- ============================================ -->
-    <!-- NAVIGATION BAR - Same on all pages -->
-    <!-- ============================================ -->
     <nav class="navbar">
         <div class="nav-container">
-            <!-- CHANGE: Replace "Your Name" with your actual name -->
             <a href="index.html" class="nav-logo">Siyu Liu</a>
             <ul class="nav-menu">
                 <li><a href="index.html" class="nav-link active">Home</a></li>
@@ -24,72 +19,89 @@
         </div>
     </nav>
 
-    <!-- ============================================ -->
-    <!-- HOME/HERO SECTION -->
-    <!-- ============================================ -->
-    <section class="home-section">
-        <div class="container">
-            <div class="home-content">
-                <!-- Left Side: Professional Introduction -->
-                <div class="home-text">
-                    <p class="home-eyebrow">UNC-Chapel Hill · MEITE</p>
-                    <h1 class="home-title"><span class="hello-line">Hello,</span><span class="name-line">I'm <span class="highlight">Siyu Liu</span></span></h1>
-                    <p class="home-subtitle">Learning Engineer · Instructional Designer · Educational Technologist</p>
+    <main class="homepage">
+        <section class="home-hero">
+            <div class="container home-hero-grid">
+                <div class="home-copy">
+                    <h1 class="home-title">
+                        <span class="hello-line">Hello,</span>
+                        <span class="name-line">I'm <span class="highlight">Siyu Liu.</span></span>
+                    </h1>
 
-                    <p class="home-lead">
-                        I am an educator and learning design professional with more than a decade of experience across international K–12 education, college counseling, curriculum and instructional development, teacher development, and educational program leadership.
-                    </p>
+                    <p class="home-subtitle">Learning Engineer | Instructional Designer | Educational Technologist</p>
 
-                    <div class="unc-focus-card">
-                        <p class="focus-label">Currently at UNC-Chapel Hill</p>
-                        <p>
-                            I am pursuing an M.A. in <strong>Educational Innovation, Technology, and Entrepreneurship (MEITE)</strong>, with a focus on Learning Engineering. The program is helping me develop expertise for professional work across:
-                        </p>
-                        <div class="expertise-tags" aria-label="Professional areas of expertise">
+                    <div class="home-bio">
+                        <p>I am an educator and learning design professional with more than a decade of experience across international K–12 education, college counseling, curriculum and instructional development, teacher development, and educational program leadership.</p>
+                        <p>I am currently pursuing an M.A. in Educational Innovation, Technology, and Entrepreneurship (MEITE) at the University of North Carolina at Chapel Hill, with a focus on Learning Engineering. Building on my previous M.A. in Education from Arizona State University, I am developing expertise at the intersection of learning science, human-centered design, technology, AI, accessibility, and data-informed decision-making.</p>
+                    </div>
+
+                    <div class="home-buttons">
+                        <a href="portfolio.html" class="btn btn-primary">View My Work <span aria-hidden="true">→</span></a>
+                        <a href="about_me.html" class="btn btn-secondary">About Me <span aria-hidden="true">→</span></a>
+                    </div>
+
+                    <section class="expertise-section" aria-labelledby="expertise-title">
+                        <h2 id="expertise-title" class="section-eyebrow">AREAS OF EXPERTISE</h2>
+                        <div class="expertise-tags">
                             <span>Learning Engineering</span>
                             <span>Instructional Design</span>
-                            <span>Learning Experience Design</span>
+                            <span>Learning Experience Design (LXD)</span>
                             <span>Educational Technologist</span>
                             <span>AI-Supported Learning</span>
                             <span>Digital Learning Innovation</span>
                             <span>EdTech Product &amp; Program Development</span>
+                            <span>Accessibility-driven Learning Designer</span>
                         </div>
-                    </div>
-
-                    <p class="home-goal">
-                        I bring together <strong>learning science, human-centered design, technology, and data-informed decision-making</strong> to create effective, accessible, and learner-centered learning experiences.
-                    </p>
-
-                    <div class="home-buttons">
-                        <a href="portfolio.html" class="btn btn-primary">Explore My Portfolio</a>
-                        <a href="about_me.html" class="btn btn-secondary">More About Me</a>
-                    </div>
+                    </section>
                 </div>
-                
-                <!-- Right Side: Your Photo -->
-                <div class="home-image">
-                    <!-- ========================================== -->
-                    <!-- IMAGE REQUIRED -->
-                    <!-- File: images/profile_photo.jpg -->
-                    <!-- Size: 800x800 pixels (square) -->
-                    <!-- Type: .jpg or .png -->
-                    <!-- Description: Your professional headshot -->
-                    <!-- ========================================== -->
-                    <img src="data:image/jpeg;base64,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" alt="Portrait of Siyu Liu">
+
+                <div class="home-portrait">
+                    <img class="home-portrait-image" src="images/profile-photo-2026.jpg" alt="Portrait of Siyu Liu">
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- ============================================ -->
-    <!-- FOOTER - Same on all pages -->
-    <!-- ============================================ -->
+        <section class="home-info-strip" aria-label="Education and professional goal">
+            <div class="container info-strip-card">
+                <article class="info-column info-unc">
+                    <div class="info-logo-wrap">
+                        <img class="info-logo unc-logo" src="images/unc-logo.webp" alt="UNC Chapel Hill logo">
+                    </div>
+                    <div class="info-copy">
+                        <p class="info-label">CURRENTLY AT</p>
+                        <h2>University of North Carolina at Chapel Hill</h2>
+                        <p>M.A. in Educational Innovation, Technology, and Entrepreneurship (MEITE)</p>
+                        <p>Learning Engineering Focus</p>
+                    </div>
+                </article>
+
+                <article class="info-column info-asu">
+                    <div class="info-logo-wrap asu-logo-wrap">
+                        <img class="info-logo asu-logo" src="images/asu-logo.webp" alt="Arizona State University logo">
+                    </div>
+                    <div class="info-copy">
+                        <p class="info-label">PREVIOUS DEGREE</p>
+                        <h2>Arizona State University</h2>
+                        <p>M.A. in Education</p>
+                        <p>2022</p>
+                    </div>
+                </article>
+
+                <article class="info-column info-goal">
+                    <div class="goal-icon" aria-hidden="true"></div>
+                    <div class="info-copy">
+                        <p class="info-label">PROFESSIONAL GOAL</p>
+                        <p class="goal-text">To become a Learning Engineer, Instructional Designer, and Educational Technologist, specializing in AI-supported, accessible, and learner-centered education.</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </main>
+
     <footer class="footer">
         <div class="container">
-            <!-- CHANGE: Replace "Your Name" and year -->
             <p>&copy; 2026 Siyu Liu. All rights reserved.</p>
         </div>
     </footer>
-
 </body>
 </html>
