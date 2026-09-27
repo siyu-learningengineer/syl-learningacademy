@@ -212,6 +212,15 @@ section {
     letter-spacing: -0.035em;
 }
 
+.home-title .hello-line,
+.home-title .name-line {
+    display: block;
+}
+
+.home-title .hello-line {
+    margin-bottom: 0.02em;
+}
+
 .highlight {
     color: #4B9CD3;
 }
@@ -232,6 +241,10 @@ section {
     font-size: 1.05rem;
     line-height: 1.8;
     margin-bottom: 24px;
+    text-align: justify;
+    text-align-last: left;
+    text-justify: inter-word;
+    hyphens: auto;
 }
 
 .unc-focus-card {
@@ -249,6 +262,10 @@ section {
     color: #536273;
     font-size: 0.98rem;
     line-height: 1.7;
+    text-align: justify;
+    text-align-last: left;
+    text-justify: inter-word;
+    hyphens: auto;
 }
 
 .unc-focus-card .focus-label {
@@ -286,6 +303,10 @@ section {
     color: #536273;
     font-size: 1rem;
     line-height: 1.75;
+    text-align: justify;
+    text-align-last: left;
+    text-justify: inter-word;
+    hyphens: auto;
 }
 
 .home-goal strong,
@@ -353,6 +374,7 @@ section {
     width: 100%;
     height: 540px;
     border: 8px solid rgba(255, 255, 255, 0.9);
+    filter: contrast(1.12) saturate(1.03);
 }
 
 /* ============================================ */
