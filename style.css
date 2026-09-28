@@ -1537,3 +1537,64 @@ section {
         grid-template-columns: 1fr !important;
     }
 }
+
+
+
+/* ============================================ */
+/* FINAL TRANSPARENT PORTRAIT */
+/* ============================================ */
+.homepage .home-portrait {
+    position: relative !important;
+    overflow: visible !important;
+    min-height: 535px !important;
+    align-items: flex-end !important;
+    justify-content: center !important;
+    isolation: isolate !important;
+}
+
+.homepage .home-portrait::before {
+    content: "" !important;
+    display: block !important;
+    position: absolute !important;
+    z-index: -3 !important;
+    width: 108% !important;
+    aspect-ratio: 1 !important;
+    top: -8% !important;
+    right: -28% !important;
+    border-radius: 50% !important;
+    background: rgba(75,156,211,.15) !important;
+}
+
+.homepage .home-portrait::after {
+    content: "" !important;
+    display: block !important;
+    position: absolute !important;
+    z-index: -2 !important;
+    width: 100% !important;
+    height: 62% !important;
+    left: -13% !important;
+    bottom: -2% !important;
+    border-radius: 58% 42% 0 0 / 54% 52% 0 0 !important;
+    background: rgba(75,156,211,.10) !important;
+    transform: rotate(-7deg) !important;
+}
+
+.homepage .portrait-orbit {
+    display: block !important;
+}
+
+.homepage .home-portrait-image {
+    position: relative !important;
+    z-index: 5 !important;
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    width: 100% !important;
+    max-width: 410px !important;
+    height: auto !important;
+    object-fit: contain !important;
+    object-position: center bottom !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    filter: none !important;
+}
