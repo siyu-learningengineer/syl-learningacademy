@@ -1,0 +1,75 @@
+/* Portfolio-only styles: shared navigation and other pages stay intact. */
+.portfolio-page{background:#fafbf9;color:#163451}
+.portfolio-page .pf-wrap{width:min(1200px,90%);margin:auto}
+.portfolio-page .skip-link{position:fixed;top:-80px;left:16px;z-index:2000;background:#fff;padding:12px;color:#163451}
+.portfolio-page .skip-link:focus{top:12px}
+.portfolio-page a:focus-visible{outline:3px solid #14669b;outline-offset:6px}
+.portfolio-page .pf-intro{padding-top:155px;padding-bottom:60px}
+.portfolio-page .pf-eyebrow{font:600 11px/1.6 Arial,sans-serif;letter-spacing:.17em;margin-bottom:22px}
+.portfolio-page h1{font-size:clamp(44px,6.7vw,88px);font-weight:400;letter-spacing:-.045em;line-height:1.08;margin-bottom:32px}
+.portfolio-page h1 em,.portfolio-page h2 em{font-weight:400;color:#387da5}
+.portfolio-page .pf-intro-bottom{display:flex;justify-content:space-between;align-items:end;gap:32px}
+.portfolio-page .pf-intro-bottom p{max-width:410px;font-size:18px;color:#50647a}
+.portfolio-page .pf-scroll{font:14px Arial,sans-serif;border-bottom:1px solid #8aabbc;padding-bottom:10px;white-space:nowrap}
+.portfolio-page .pf-scroll span{margin-left:28px}
+.portfolio-page .pf-index{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:54px;border-top:1px solid #c8d5dd;padding-top:22px;font:13px/1.6 Arial,sans-serif}
+.portfolio-page .pf-index a{display:flex;gap:12px}
+.portfolio-page .pf-index span{color:#557b92;font-size:11px}
+.portfolio-page .pf-index a:hover{color:#14669b}
+.portfolio-page .pf-chapter{padding:90px 0;scroll-margin-top:85px}
+.portfolio-page .pf-course{background:#eaf2f5}
+.portfolio-page .pf-split{display:grid;grid-template-columns:.8fr 1.5fr;gap:70px;align-items:start}
+.portfolio-page .pf-chapter-heading{position:sticky;top:120px}
+.portfolio-page h2{font-size:clamp(34px,4vw,53px);font-weight:400;letter-spacing:-.035em;line-height:1.08}
+.portfolio-page .pf-chapter-heading>p:not(.pf-eyebrow){margin-top:25px;color:#50647a;max-width:265px;font-size:17px}
+.portfolio-page .pf-chapter-line{display:block;width:65px;height:2px;background:#4b9cd3;margin-top:36px}
+.portfolio-page .pf-image-link{display:block;position:relative;overflow:hidden;border-radius:14px;background:#fff;box-shadow:0 18px 45px #16345110}
+.portfolio-page .pf-image-link img{width:100%;height:auto;transition:transform .6s ease}
+.portfolio-page .pf-image-link:hover img{transform:scale(1.018)}
+.portfolio-page .pf-image-label{position:absolute;bottom:16px;right:16px;background:#fff;color:#163451;border:1px solid #d6e2e8;border-radius:30px;padding:10px 15px;font:10px/1.2 Arial,sans-serif;letter-spacing:.09em;box-shadow:0 2px 10px #16345112}
+.portfolio-page .pf-project-copy{padding-top:30px}
+.portfolio-page .pf-project-copy .pf-eyebrow{margin-bottom:12px}
+.portfolio-page h3{font-size:clamp(28px,3vw,39px);font-weight:400;letter-spacing:-.025em;line-height:1.15;margin-bottom:20px}
+.portfolio-page .pf-project-copy>p:not(.pf-eyebrow),.portfolio-page .pf-product-copy>div>p:not(.pf-eyebrow){font-size:17px;line-height:1.8;color:#435d73}
+.portfolio-page .pf-tags{display:flex;flex-wrap:wrap;gap:8px;list-style:none;margin-top:24px}
+.portfolio-page .pf-tags li{border:1px solid #b6cbd8;border-radius:30px;padding:6px 12px;font:11px/1.5 Arial,sans-serif;color:#345a75}
+.portfolio-page .pf-product{background:#fafbf9}
+.portfolio-page .pf-product-header{display:flex;justify-content:space-between;gap:30px;align-items:end;margin-bottom:40px}
+.portfolio-page .pf-product-header>p{font-size:17px;color:#50647a}
+.portfolio-page .pf-browser{border:1px solid #dde5e8}
+.portfolio-page .pf-browser-bar{height:37px;background:#e8eef2;display:flex;align-items:center;gap:6px;padding:0 16px}
+.portfolio-page .pf-browser-bar i{width:7px;height:7px;border-radius:50%;background:#9bafbd}
+.portfolio-page .pf-browser-bar span{margin:auto;font:9px Arial,sans-serif;letter-spacing:.14em;color:#526c80;padding-right:30px}
+.portfolio-page .pf-product-copy{display:grid;grid-template-columns:1fr 1.2fr;gap:65px;margin-top:36px}
+.portfolio-page .pf-product-copy h3{margin-bottom:8px}
+.portfolio-page .pf-product-copy .pf-project-subtitle{font-style:italic}
+.portfolio-page .pf-upcoming{display:grid;grid-template-columns:1fr 1fr;gap:65px;align-items:center}
+.portfolio-page .pf-research{background:#e9edf7}
+.portfolio-page .pf-data{background:#163451;color:#fff}
+.portfolio-page .pf-data h2 em{color:#a9d6f3}
+.portfolio-page .pf-coming{border-top:1px solid #a7b8c8;padding-top:24px}
+.portfolio-page .pf-coming p{font-size:17px;line-height:1.8;margin-top:20px;max-width:350px}
+.portfolio-page .pf-status{display:inline-block;border:1px solid currentColor;border-radius:30px;padding:5px 12px;font:11px/1.5 Arial,sans-serif;letter-spacing:.06em}
+.portfolio-page .pf-end{padding-top:35px;padding-bottom:35px;display:flex;justify-content:space-between;gap:25px;font-size:14px}
+.portfolio-page .will-reveal{opacity:1;transform:none}
+@media(prefers-reduced-motion:no-preference){.portfolio-page .will-reveal:not(.is-visible){opacity:.2;transform:translateY(28px)}.portfolio-page .will-reveal{transition:opacity .8s ease,transform .8s ease}}
+@media(max-width:800px){
+.portfolio-page .pf-intro{padding-top:125px;padding-bottom:40px}
+.portfolio-page .pf-intro-bottom,.portfolio-page .pf-product-header{align-items:start;flex-direction:column}
+.portfolio-page .pf-index{grid-template-columns:1fr 1fr;gap:18px}
+.portfolio-page .pf-split,.portfolio-page .pf-product-copy,.portfolio-page .pf-upcoming{grid-template-columns:1fr;gap:32px}
+.portfolio-page .pf-chapter-heading{position:static}
+.portfolio-page .pf-chapter{padding:55px 0}
+.portfolio-page .pf-chapter-heading>p:not(.pf-eyebrow){max-width:420px}
+.portfolio-page .pf-chapter-line{margin-top:20px}
+.portfolio-page .pf-image-label{font-size:9px;bottom:10px;right:10px;padding:8px 10px}
+}
+@media(max-width:480px){
+.portfolio-page .nav-container{padding:16px 12px;gap:12px;flex-wrap:wrap}
+.portfolio-page .nav-logo{font-size:20px}
+.portfolio-page .nav-menu{gap:12px;font-size:12px}
+.portfolio-page .pf-index{font-size:12px;gap:16px 12px}
+.portfolio-page .pf-intro-bottom p{font-size:16px}
+.portfolio-page .pf-eyebrow{font-size:10px}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.portfolio-page *{transition:none!important}}
