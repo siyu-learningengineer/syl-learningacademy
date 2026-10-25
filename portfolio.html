@@ -85,7 +85,25 @@
 @media(max-width:900px) and (min-width:651px){.sketch-scene{aspect-ratio:1.5}.sketch-project-menu{gap:9px;left:3%;right:3%}.sketch-card-title{font-size:12px;min-height:43px}.sketch-copy{top:21%}}
 @media(max-width:650px){.sketch-scene{height:790px;aspect-ratio:auto}.sketch-art{width:210%;left:-55%;height:100%;object-fit:cover}.sketch-copy{inset:14% 4% auto}.sketch-copy h1{font-size:43px}.sketch-scroll{margin-top:15px}.sketch-project-menu{top:32%;bottom:auto;left:6%;right:6%;grid-template-columns:repeat(2,minmax(0,1fr));gap:17px 14px}.sketch-card-picture{aspect-ratio:1.85}.sketch-card-title{font-size:13px;min-height:32px}.sketch-project:last-child{grid-column:1/-1;width:calc(50% - 7px);justify-self:center}.sketch-project{padding:7px}.sketch-controls{bottom:13px}.sketch-project:hover,.sketch-project:focus-visible{transform:translateY(-5px) scale(1.03)}}
 @media(prefers-reduced-motion:reduce){.sketch-project,.sketch-card-picture img{transition:none}.sketch-project:hover,.sketch-project:focus-visible{transform:none}}
-.cloud-two path{transform:translate(-110px,-100px)}.sketch-scene{aspect-ratio:1.85}@media(max-width:650px){.sketch-scene{aspect-ratio:auto}}</style></head><body class="portfolio-page"><a class="skip-link" href="#main">Skip to content</a><nav class="navbar" aria-label="Main navigation"><div class="nav-container"><a href="index.html" class="nav-logo">Siyu Liu</a><ul class="nav-menu"><li><a href="index.html" class="nav-link">Home</a></li><li><a href="about_me.html" class="nav-link">About Me</a></li><li><a href="portfolio.html" class="nav-link active" aria-current="page">Portfolio</a></li><li><a href="contact.html" class="nav-link">Contact</a></li></ul></div></nav>
+.cloud-two path{transform:translate(-110px,-100px)}.sketch-scene{aspect-ratio:1.85}@media(max-width:650px){.sketch-scene{aspect-ratio:auto}}
+/* Follow the lawn's arch and bring the gallery closer to the heading. */
+@media(min-width:651px){
+.sketch-scene{aspect-ratio:1.95}
+.sketch-copy{inset:17% 8% auto}
+.sketch-project-menu{bottom:7%;align-items:start}
+.sketch-project{--arc:0px;transform:translateY(var(--arc)) rotate(var(--tilt,0deg))}
+.scene-1,.scene-5{--arc:0px}
+.scene-2,.scene-4{--arc:-38px}
+.scene-3{--arc:-58px}
+.sketch-project:hover,.sketch-project:focus-visible{transform:translateY(calc(var(--arc) - 9px)) scale(1.06) rotate(0deg)}
+}
+@media(min-width:651px) and (max-width:900px){
+.sketch-scene{aspect-ratio:1.65}
+.scene-2,.scene-4{--arc:-24px}
+.scene-3{--arc:-38px}
+}
+@media(prefers-reduced-motion:reduce) and (min-width:651px){.sketch-project:hover,.sketch-project:focus-visible{transform:translateY(var(--arc)) rotate(var(--tilt,0deg))}}
+</style></head><body class="portfolio-page"><a class="skip-link" href="#main">Skip to content</a><nav class="navbar" aria-label="Main navigation"><div class="nav-container"><a href="index.html" class="nav-logo">Siyu Liu</a><ul class="nav-menu"><li><a href="index.html" class="nav-link">Home</a></li><li><a href="about_me.html" class="nav-link">About Me</a></li><li><a href="portfolio.html" class="nav-link active" aria-current="page">Portfolio</a></li><li><a href="contact.html" class="nav-link">Contact</a></li></ul></div></nav>
 <main id="main">
 <header class="sketch-hero folio-wrap" aria-labelledby="sketch-title"><div class="sketch-scene">
 <svg class="sketch-art" viewBox="0 0 1600 820" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
