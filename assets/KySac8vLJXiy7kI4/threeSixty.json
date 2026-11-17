@@ -1,0 +1,62 @@
+{
+  "version": "3.130.39111.0",
+  "course_id": "6DuH34XiPI1",
+  "title": "L3 One-Page Resume",
+  "thumbnail": "story_content/thumbnail.jpg",
+  "scenes": [
+    {
+      "title": "Lesson 3: One-Page Resume"
+    }
+  ],
+  "slides": [
+    {
+      "id": "681dJjA2gCT",
+      "title": "Introduction",
+      "scene_index": "1.1"
+    },
+    {
+      "id": "5qG9svspAB9",
+      "title": "Six Resume Sections",
+      "scene_index": "1.2"
+    },
+    {
+      "id": "6n7DvrzbR59",
+      "title": "Sample Resume",
+      "scene_index": "1.3"
+    },
+    {
+      "id": "63ZJM9NMshp",
+      "title": "Drag and Drop",
+      "scene_index": "1.4"
+    },
+    {
+      "id": "6GwmrifB6ze",
+      "title": "Great Job",
+      "scene_index": "1.5"
+    },
+    {
+      "id": "6omu2YxBQMT",
+      "title": "Write Your Resume",
+      "scene_index": "1.6"
+    },
+    {
+      "id": "5uZNTF0rEQR",
+      "title": "Knowledge Check",
+      "scene_index": "1.7"
+    },
+    {
+      "id": "5wYg8LoFeOS",
+      "title": "Lesson Complete",
+      "scene_index": "1.8"
+    }
+  ],
+  "player": {
+    "name": "unified",
+    "width": 1220,
+    "height": 658
+  },
+  "stage": {
+    "width": 960,
+    "height": 540
+  }
+}
