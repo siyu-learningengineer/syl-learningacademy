@@ -26,6 +26,8 @@
 
 html {
     scroll-behavior: smooth;
+    /* Same color as the footer, so no white strip shows below it on short pages */
+    background-color: var(--text-dark);
 }
 
 body {
