@@ -26,8 +26,18 @@
 
 html {
     scroll-behavior: smooth;
-    /* Same color as the footer, so no white strip shows below it on short pages */
-    background-color: var(--text-dark);
+}
+
+/* Keep the footer at the bottom of the window on short pages (no white strip below it);
+   the section just above the footer stretches to fill the extra space */
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+body > *:has(+ .footer) {
+    flex-grow: 1;
 }
 
 body {
