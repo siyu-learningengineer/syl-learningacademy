@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me - Siyu Liu</title>
+    <link rel="stylesheet" href="style.css?v=20260927-navsync">
+    <style>
+      .credentials-section{margin:80px 0 70px;padding:54px 20px 46px;border-radius:28px;background:linear-gradient(180deg,#fff 0%,#eef7fc 100%);overflow:hidden;box-shadow:0 14px 40px rgba(31,41,55,.08)}
+      .credentials-heading{text-align:center;margin-bottom:8px;font-size:2rem;color:#1f2937}
+      .credentials-kicker{text-align:center;color:#4B9CD3;font-weight:700;letter-spacing:.12em;text-transform:uppercase;font-size:.78rem;margin-bottom:6px}
+      .credentials-subtitle{text-align:center;color:#6b7280;margin:0 auto 26px;max-width:680px}
+      .coverflow{position:relative;height:470px;perspective:1500px;perspective-origin:50% 45%;touch-action:pan-y;user-select:none}
+      .coverflow-track{position:absolute;inset:0;transform-style:preserve-3d}
+      .certificate-card{position:absolute;left:50%;top:46%;width:320px;height:390px;margin:-195px 0 0 -160px;border:0;background:transparent;padding:0;cursor:pointer;transform-style:preserve-3d;transition:transform .72s cubic-bezier(.22,.72,.22,1),filter .72s ease,opacity .72s ease;will-change:transform,filter,opacity}
+      .certificate-frame{width:100%;height:100%;padding:12px;border-radius:18px;background:#fff;box-shadow:0 22px 48px rgba(18,52,77,.18);display:flex;align-items:center;justify-content:center;overflow:hidden;border:1px solid rgba(75,156,211,.22)}
+      .certificate-card img{width:100%;height:100%;object-fit:contain;border-radius:10px;background:#fff}
+      .certificate-card.is-active .certificate-frame{box-shadow:0 28px 60px rgba(75,156,211,.32),0 0 0 2px rgba(75,156,211,.28)}
+      .credentials-meta{text-align:center;min-height:86px;margin-top:4px}
+      .credentials-year{display:inline-block;color:#fff;background:#4B9CD3;border-radius:999px;padding:4px 13px;font-size:.8rem;font-weight:700;margin-bottom:7px}
+      .credentials-title{font-size:1.22rem;margin:0 0 3px;color:#1f2937}
+      .credentials-org{margin:0;color:#6b7280;font-size:.96rem}
+      .coverflow-controls{display:flex;align-items:center;justify-content:center;gap:18px;margin-top:14px}
+      .coverflow-btn{width:44px;height:44px;border-radius:50%;border:1px solid rgba(75,156,211,.35);background:#fff;color:#285f84;font-size:1.35rem;cursor:pointer;box-shadow:0 7px 18px rgba(31,41,55,.08);transition:transform .2s ease,background .2s ease}
+      .coverflow-btn:hover{transform:translateY(-2px);background:#eaf5fb}.coverflow-btn:focus-visible,.certificate-card:focus-visible{outline:3px solid #4B9CD3;outline-offset:4px}
+      .coverflow-count{min-width:80px;text-align:center;color:#6b7280;font-variant-numeric:tabular-nums}
+      @media(max-width:768px){.credentials-section{margin:55px -4px 45px;padding:38px 10px 34px;border-radius:20px}.coverflow{height:390px}.certificate-card{width:250px;height:310px;margin:-155px 0 0 -125px}.credentials-heading{font-size:1.65rem}.credentials-subtitle{font-size:.95rem;padding:0 12px}.credentials-title{font-size:1.08rem}}
+      @media(prefers-reduced-motion:reduce){.certificate-card{transition:none!important}.coverflow-btn{transition:none!important}}
+    
+.selected-credentials{margin:65px 0 55px;padding:45px 0;background:#fff;border-top:1px solid #dbe8f2;border-bottom:1px solid #dbe8f2;scroll-margin-top:90px}
+.selected-credentials-kicker{font:700 11px/1.5 Arial,sans-serif;letter-spacing:.16em;color:#3479a5;text-align:center;margin-bottom:12px}
+.selected-credentials h3{font-size:2rem;line-height:1.25;color:#163451;text-align:center;margin-bottom:15px}
+.selected-credentials-intro{max-width:720px;margin:0 auto 35px;text-align:center;color:#57697b;line-height:1.7;font-size:1rem}
+.credential-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}
+.credential-item{display:grid;grid-template-columns:130px minmax(0,1fr);align-items:center;gap:22px;padding:24px 20px;border:1px solid #dce6ee;border-radius:12px;background:#fff}
+.credential-thumb{width:130px;min-height:180px;display:flex;justify-content:center;align-items:center}
+.credential-thumb img{display:block;width:auto;height:auto;max-width:min(100%,var(--certificate-width,127px));max-height:180px;object-fit:contain}
+.credential-type{font:700 10px/1.5 Arial,sans-serif;letter-spacing:.06em;text-transform:uppercase;color:#35769e;margin:0 0 8px}
+.credential-details h4{font-size:1.13rem;line-height:1.35;color:#163451;margin:0 0 8px}
+.credential-date{font:13px/1.5 Arial,sans-serif;color:#50677e;margin:0 0 5px}
+.credential-provider{font-size:.87rem;line-height:1.5;color:#5c6a78;margin:0 0 10px}
+.credential-connection{font-size:.93rem;line-height:1.65;color:#405873;margin:0}
+@media(max-width:900px){.credential-grid{grid-template-columns:1fr}.credential-item{grid-template-columns:140px minmax(0,1fr)}}
+@media(max-width:480px){.selected-credentials{padding:32px 0}.selected-credentials h3{font-size:1.65rem}.credential-item{grid-template-columns:1fr;padding:22px;gap:14px}.credential-thumb{margin:auto}.credential-details{min-width:0}}
+.credential-original .credential-thumb{width:150px;min-height:200px}.credential-original{grid-template-columns:150px minmax(0,1fr)}.credential-original .credential-thumb a{display:block;cursor:zoom-in}.credential-original .credential-thumb img{max-width:150px;max-height:215px;width:auto;height:auto;transition:transform .2s ease}.credential-original .credential-thumb a:hover img{transform:scale(1.03)}.credential-original-link{display:inline-block;margin-top:12px;color:#1874b2;font:600 13px/1.5 Arial,sans-serif;text-decoration:underline;text-underline-offset:4px}.credential-original-link:focus-visible,.credential-thumb a:focus-visible{outline:3px solid #4b9cd3;outline-offset:4px}@media(max-width:480px){.credential-original{grid-template-columns:1fr}.credential-original .credential-thumb{margin:auto}}@media(prefers-reduced-motion:reduce){.credential-original .credential-thumb img{transition:none}}
+.about-page-heading{display:grid;grid-template-columns:400px minmax(0,1fr);gap:50px;margin-bottom:45px}
+.about-heading-row{grid-column:2;display:flex;align-items:center;flex-wrap:wrap;gap:18px 26px}
+.about-heading-row .section-title{margin:0;text-align:left;white-space:nowrap}
+.about-cv-link{padding:12px 23px;font-size:1rem;white-space:nowrap}
+@media(max-width:768px){.about-page-heading{grid-template-columns:1fr;gap:0;margin-bottom:35px}.about-heading-row{grid-column:1;gap:16px 22px}.about-heading-row .section-title{font-size:2rem}}
+.credential-original .credential-thumb,.credential-original .credential-thumb img{cursor:default}.credential-original .credential-thumb img{transform:none!important}</style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">Siyu Liu</a>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about_me.html" class="nav-link active">About Me</a></li>
+                <li><a href="portfolio.html" class="nav-link">Portfolio</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+    <section class="about-section">
+        <div class="container">
+        <header class="about-page-heading"><div class="about-heading-row"><h2 class="section-title">About Me</h2><a href="files/siyu-github-cv.pdf" class="btn btn-primary about-cv-link" download>Download My CV</a></div></header>
+            <div class="about-block">
+                <div class="about-content">
+                    <div class="about-image"><img src="images/portfolio-canvas-internship.jpg" alt="A SOWO 330 Canvas course page I designed during my UNC School of Social Work internship, with a blue banner and icon grid"></div>
+                    <div class="about-text"><h3>Professional Background</h3><p>I have more than ten years of experience in international education. I have worked as a Director of College Counseling, Principal’s Assistant, Director of Studies, and language teacher. In these roles, I designed courses and learning materials, trained teachers, evaluated teaching, and managed educational programs. At UNC-Chapel Hill and through my internship with the UNC School of Social Work, I am building skills in Canvas course development, digital accessibility, generative AI, and technology-supported learning.</p></div>
+                </div>
+            </div>
+            <div class="about-block reverse">
+                <div class="about-content">
+                    <div class="about-image"><img src="images/portfolio-online-program.jpg" alt="Bilingual international education website I designed"></div>
+                    <div class="about-text"><h3>Career Aspirations &amp; Goals</h3><p>I want to work as an instructional designer who creates accessible, engaging learning experiences. I bring classroom experience and academic leadership to this work. I want to help schools, universities, and other organizations connect learning goals with practical activities and useful technology. Over time, I hope to lead learning programs and use AI responsibly to support more inclusive, personalized learning.</p></div>
+                </div>
+            </div>
+            <div class="about-block">
+                <div class="about-content">
+                    <div class="about-image"><img src="images/portfolio-metaquest-guide.jpg" alt="Labeled Meta Quest 3 headset image from my teachers guide"></div>
+                    <div class="about-text"><h3>Learning Design Interests</h3><p>I am interested in how technology and AI can help students reflect on their learning and make informed decisions. My interests include supporting students in Grades 9–12 as they understand their strengths, prepare for college, and plan their next steps. I believe technology should help students become better learners. This means making instructions clear and tasks manageable. For example, my Meta Quest 3 guide uses a labeled image to help new users identify headset controls before setting up the device and opening a learning activity.</p></div>
+                </div>
+            </div>
+            <section class="selected-credentials" aria-labelledby="selected-credentials-title"><p class="selected-credentials-kicker">QUALIFICATIONS &amp; EXPERIENCE</p><h3 id="selected-credentials-title">Selected Credentials</h3><p class="selected-credentials-intro">Selected training most related to teaching, instructional design, and student advising.</p><div class="credential-grid"><article class="credential-item"><div class="credential-thumb"><img src="data:image/webp;base64,UklGRrgEAABXRUJQVlA4IKwEAABwIwCdASp/ALQAP0WQwVqwKKakKhEb4gAoiWcngmbzI6dt8zkyTzvxJPtMrEo167LmkvZVDOMs+HpUT/TQ9TU5YDv+FnHOrooxINxqvMzTibURmjVXGX/QeRByr8j3eZLSX5zFAoR9Ryt6MJErFiFw0sayJIGiuy5jdLc96gAwW04yNoDRDMlqaU0Ywq6wMoBMIRYh7hlB+KSSmp5Ys4sZ5r/enmOQJpaWTVl/Nnvj7m0uXVGvwc1Z81yQylU7zG5OuTQmrZ4HnEQ37rXhxbIzGseTU4g/d3DSSPMYA/8xmQaPQkxjuluPzPOYXQBDa0Ekmcyosge9XTtsGoixRFVybiV77vylAM9U/7u26n6+A59RkDLt+e/9qycENaZVe970Nn0AAP7tN2veCB8lHIyaU4HkxNx6TefUPYGQeNxSZfo79tmSjxfxnArKF/dE07rkqLabuFduw1hlD1dkl3O8cj+otoi3v4XEsqGQkhr3HhGTsTrq14dPB57osZ+Dbtp0EWuYfTxZJcv0NUIxOilEoZ+lUZ2plATK/k3KtY37c+x6FHZUw+wq6h0wH+lyxlnrH6wNPaDIfKkKtQJrc6wFteeYBp94OgGNtviy7O4ANTE+0KPESfJ2RAxFeaLbLrSUNAizEtv3J0vYUoP9nW3fYC4Lrx6SirB5X6AGtOfwXhbhQ4yqCIvj7KFmGGKIMsRBxrs+Q1cl2yzwIHqiEglXfLw+PmWX3QgEIILBhI3Dy0nvF3ZRm5gXJxu35NqE96zWonv5jGDItAMtdCuAuQ5qNtawGy/NlMpk97jhV1gUj46+bgP3jUtfXCtlDqJZfc+vYDGtfxhRYRFwsdgHPIhcoWzcw35nvGv7IGLeUnGTLtNtDdoi4QBa0zmrt6Rr1yStKHe/wCW85SF9A6Az9DjaldISZoq21kAW8RBpZLoXmp+HUMD69wsxs+P2bv1qfvfkloBu/wAQILn/ui2XynpboxkG/NWzkC9tCYoOySrok7OAWAQompFGcKtokowFCvyoF7lRcQxy2toh7qeT1HDVy7sDGldrNRmbDxQta4+09ljx466wYgBg1pyk5NK3PCwBI8EUI55hoJsLDkSY0NaNrqjI2SerfMLqc0oW/5eQamdbgU+bLbTshktkVGge/L09ZwxIWF4UXLi4ug8+DqGYQiy6U88SZKoQjltBIEyV0zam5RiLU2mulR2wdRdzZ4xasIZ++EBUoz81gpy1WQWlTNim5t1TnNbMOgmYlsqindzKtdSpU14IryTilTyVzTgERgvN36BjNCjOrTeKNDG/jJzDZddW9mMkjtZnVdbgTL9TqvMvOLJ+B3MHIcV+VC1tazGYCllsg4jhntdkNm491ru9ZxYoREOJ9RdsnLwYOsXrXl3VZhR36eWVcT6c/2mBhp/9BSmXwQ4FU0N3tIC2EddYmBI/sO+kywZ+U1ubtbqjsS5QewAGHb+3WlZ5FKtUgvT370WB8R0yESzFepMHOvzmLxQZXtIw8hnRXzg9sANYXPe3Rkv2KqsQ9ct5NCsvQLCXlarVhY+lqv5feE8o2InNrZ3s48ZAk68UhYcZNE/dRdZJbtFIAAAAAA==" alt="TCFL Certificate, 2021" loading="lazy"></div><div class="credential-details"><p class="credential-type">Teaching qualification</p><h4>TCFL Certificate</h4><p class="credential-date">2021</p><p class="credential-provider">Teaching Chinese as a Foreign Language</p><p class="credential-connection">Relevant to designing language lessons around learners’ needs and making explanations clear across linguistic backgrounds.</p></div></article><article class="credential-item"><div class="credential-thumb"><img src="data:image/webp;base64,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" alt="Advanced TEFL/TESOL Certificate, Aug 2022" loading="lazy"></div><div class="credential-details"><p class="credential-type">Teaching qualification</p><h4>Advanced TEFL/TESOL Certificate</h4><p class="credential-date">August 2022</p><p class="credential-provider">120-Hour Advanced Course</p><p class="credential-connection">Supports my language-teaching background and its connection to planning instruction for learners with different language needs.</p></div></article><article class="credential-item credential-original"><div class="credential-thumb"><img src="images/credentials/icef-2021.jpg" alt="ICEF China Trained Agent Counsellor certificate" loading="lazy"></div><div class="credential-details"><p class="credential-type">Professional qualification</p><h4>ICEF China Trained Agent Counsellor</h4><p class="credential-date">March 4, 2021</p><p class="credential-provider">Chinese Education Agent Course · ICEF & BOSSA</p><p class="credential-connection">Completion of the Chinese Education Agent Course and its formal test, supporting my international education and college-counseling background.</p></div></article><article class="credential-item credential-original"><div class="credential-thumb"><img src="images/credentials/toefl-junior.jpg" alt="TOEFL Junior Teachers Training Program certificate" loading="lazy"></div><div class="credential-details"><p class="credential-type">Teacher development</p><h4>TOEFL Junior Teachers Training Program</h4><p class="credential-date">January 25, 2022</p><p class="credential-provider">ETS China</p><p class="credential-connection">Completed the TOEFL Junior Teachers Training Program for the 2021 Fall Term; the certificate was issued in January 2022.</p></div></article></div></section>
+            
+        </div>
+    </section>
+    <footer class="footer"><div class="container"><p>&copy; 2026 Siyu Liu. All rights reserved.</p></div></footer>
+    
+</body>
+</html>
