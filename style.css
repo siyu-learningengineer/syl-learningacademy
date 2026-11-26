@@ -1665,3 +1665,8 @@ section {
 }
 /* Work screenshots on About page: show the whole image. */
 .about-image img{object-fit:contain !important;background:#fff;height:auto !important;aspect-ratio:auto !important}
+
+
+/* About Me: no gap between the last card and the footer */
+.about-section { padding-bottom: 0 !important; }
+.about-section .container > :last-child { margin-bottom: 0 !important; }
